@@ -1,22 +1,9 @@
 package hackerRank.basic;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.HashMap;
 
 public class Test {
-	public static void main(String[] args) {
-		int[] arrDrone = {25,13,5};
-		Integer[] arrWeight = {2,5,7,10,17};
-		Arrays.sort(arrDrone);
-		int[] arr2Drone = new int[2];
 		
-		arr2Drone[0] = arrDrone[arrDrone.length-1];
-		arr2Drone[1] = arrDrone[arrDrone.length-2];
-		
-		Arrays.sort(arrWeight,Collections.reverseOrder());
-		System.out.println(minWeight(arr2Drone,arrWeight));
-	}
 
 	/**
 	 * @param arr2Drone

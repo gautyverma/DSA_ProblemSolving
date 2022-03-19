@@ -8,17 +8,17 @@ public class ChessGrandMaster {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int xl1 = 1;
-		int xr1 = 2;
+		int xl1 = 2;
+		int xr1 = 5;
 
-		int yl1 = 1;
-		int yr1 = 2;
+		int yl1 = 2;
+		int yr1 = 5;
 
-		int xl2 = 3;
-		int xr2 = 4;
+		int xl2 = 1;
+		int xr2 = 6;
 
-		int yl2 = 3;
-		int yr2 = 4;
+		int yl2 = 1;
+		int yr2 = 6;
 
 
 		if (((xr1 - xl1) + 1) * ((xr1 - xl1) + 1) > ((xr2 - xl2) + 1) * ((xr2 - xl2) + 1)) {
