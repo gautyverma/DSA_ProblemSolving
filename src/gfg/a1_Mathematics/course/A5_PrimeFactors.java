@@ -10,6 +10,7 @@ public class A5_PrimeFactors {
 
 // GFG - most Efficient
 	private static void printPrimeFactors2(int n) {
+		System.out.print("Efficient Approach - ");
 		if (n == 1) {
 			System.out.println(1);
 			return;
@@ -41,6 +42,7 @@ public class A5_PrimeFactors {
 // Mine
 	private static void printPrimeFactors(int n) {
 		// TODO Auto-generated method stub
+		System.out.print("Navie Approach - ");
 		int i = 1;
 		while (i <= n) {
 			if (n % i == 0 && A4_isPrime.isPrime(i)) {
