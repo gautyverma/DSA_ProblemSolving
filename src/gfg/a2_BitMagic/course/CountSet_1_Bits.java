@@ -1,4 +1,4 @@
-package gfg.a1_BitMagic.course;
+package gfg.a2_BitMagic.course;
 
 public class CountSet_1_Bits {
 	public static void main(String[] args) {

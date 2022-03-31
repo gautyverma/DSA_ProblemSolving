@@ -1,4 +1,4 @@
-package gfg.a1_BitMagic.course;
+package gfg.a2_BitMagic.course;
 
 /*
  *  I/P - n = 5 k = 3
