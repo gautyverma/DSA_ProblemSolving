@@ -17,14 +17,31 @@ package gfg.a2_BitMagic.course;
 */
 public class KthBit_isSet_Not {
 	public static void main(String[] args) {
-		int n = 5;
-		int k = 1;
+		int n = 39;
+		int k = 5;
+		navie(n,k);
 		kthisSet_leftshift(n, k);
 		kthisSet_rightshift(n, k);
+	}
+private static void navie(int n, int k) {
+		// TODO Auto-generated method stub
+	boolean flag = false;
+	for(int i = 1;i<=k;i++) {
+		if(n%2 != 0) {
+			flag = true;
+		}else
+			flag = false;
+		n /= 2;
+	}
+	if(flag)
+		System.out.println("YES");
+	else
+		System.out.println("No");
 	}
 // using left shift operator
 	private static void kthisSet_leftshift(int n, int k) {
 		// TODO Auto-generated method stub
+		System.out.println("(1 << (k - 1))"+(1 << (k - 1)));
 		if ((n & (1 << (k - 1))) != 0) {
 			System.out.println("YES");
 		} else {
