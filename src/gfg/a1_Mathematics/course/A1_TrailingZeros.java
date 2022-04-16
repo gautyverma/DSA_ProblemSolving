@@ -1,6 +1,8 @@
 package gfg.a1_Mathematics.course;
 
-import java.util.Scanner;
+/*
+	given n, find trailing zero's of factorial of n.
+*/import java.util.Scanner;
 
 public class A1_TrailingZeros {
 	public static void main(String[] args) {

@@ -24,6 +24,7 @@ public class MaxAndValue {
 		System.out.println(maxAndValueNavie(arr));
 	}
 
+	// Navie Soltion
 	private static int maxAndValueNavie(int[] arr) {
 		// TODO Auto-generated method stub
 		int res = 0;
@@ -39,10 +40,12 @@ public class MaxAndValue {
 		return res;
 	}
 
+	// Efficient solution - O(n*log(m))
+	
 	private static int maxAndValue(int[] arr) {
 		// TODO Auto-generated method stub
 		int res = 0;
-		for (int i = 4; i >= 0; i--) {
+		for (int i = 31; i >= 0; i--) {
 			int count = numBitSet((res | (1 << i)), arr, arr.length);
 			if (count >= 2) {
 				res |= (1 << i);
