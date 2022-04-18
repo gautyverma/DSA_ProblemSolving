@@ -1,4 +1,4 @@
-package pp;
+package prac;
 
 import java.util.Arrays;
 

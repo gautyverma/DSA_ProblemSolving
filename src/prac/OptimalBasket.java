@@ -1,4 +1,4 @@
-package pp;
+package prac;
 
 public class OptimalBasket {
 	public static void main(String[] args) {
