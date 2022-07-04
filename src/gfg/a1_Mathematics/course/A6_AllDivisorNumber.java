@@ -3,10 +3,10 @@ package gfg.a1_Mathematics.course;
 public class A6_AllDivisorNumber {
 	public static void main(String[] args) {
 		int n = 30;
-		divisorsNavie(n);
-		System.out.println();
-		divisorsEff1(n);
-		System.out.println();
+//		divisorsNavie(n);
+//		System.out.println();
+//		divisorsEff1(n);
+//		System.out.println();
 		divisorsEff2(n);
 		
 
@@ -16,7 +16,7 @@ public class A6_AllDivisorNumber {
 	private static void divisorsEff2(int n) {
 		System.out.print("Effective_2 Approach - ");
 		int i;
-		for (i = 1; i * i <= n; i++) {
+		for (i = 1; i * i < n; i++) {
 			if (n % i == 0) {
 				System.out.print(i + " ");
 			}

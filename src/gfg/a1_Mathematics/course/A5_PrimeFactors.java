@@ -2,7 +2,7 @@ package gfg.a1_Mathematics.course;
 
 public class A5_PrimeFactors {
 	public static void main(String[] args) {
-		int n = 84;
+		int n = 12;
 		printPrimeFactors(n);
 		System.out.println();
 		printPrimeFactors2(n);

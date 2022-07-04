@@ -2,7 +2,7 @@ package gfg.a1_Mathematics.course;
 
 public class A4_isPrime {
 	public static void main(String[] args) {
-		int n = 131;
+		int n = 7;
 		System.out.println(isPrime(n));
 	}
 
