@@ -11,6 +11,7 @@ public class SecondLargest {
 	// efficient approach
 	private static int eff_SecondLargest(int[] arr) {
 		System.out.println("------Efficient Approach------");
+
 		// index of 2nd largest and largest
 		int res = -1, largest = 0;
 		for (int i = 1; i < arr.length; i++) {
