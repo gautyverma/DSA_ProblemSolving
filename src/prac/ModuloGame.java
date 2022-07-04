@@ -1,7 +1,5 @@
 package prac;
 
-import java.util.Arrays;
-
 public class ModuloGame {
 	private static int mod = 109+7;
 public static void main(String[] args) {

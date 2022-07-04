@@ -1,12 +1,7 @@
 package hackerRank.greedy;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 // Below is Java code to print
 // largest permutation after

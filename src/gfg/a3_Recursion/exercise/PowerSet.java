@@ -1,8 +1,6 @@
 package gfg.a3_Recursion.exercise;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class PowerSet {
 	public static void main(String[] args) {

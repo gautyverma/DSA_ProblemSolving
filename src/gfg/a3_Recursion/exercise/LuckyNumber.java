@@ -1,7 +1,5 @@
 package gfg.a3_Recursion.exercise;
 
-import java.util.Arrays;
-
 public class LuckyNumber {
 	public static void main(String[] args) {
 		int n = 5;

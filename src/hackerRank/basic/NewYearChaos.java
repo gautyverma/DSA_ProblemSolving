@@ -1,9 +1,6 @@
 package hackerRank.basic;
-import java.util.Scanner;
-import java.awt.print.Printable;
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class NewYearChaos {

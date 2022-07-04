@@ -2,7 +2,6 @@ package hackerRank.greedy;
 
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class MaximumPerimeterTriangle {
 	public static void main(String[] args) {

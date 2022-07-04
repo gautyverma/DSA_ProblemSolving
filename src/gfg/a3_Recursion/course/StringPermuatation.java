@@ -1,7 +1,5 @@
 package gfg.a3_Recursion.course;
 
-import java.util.Arrays;
-
 public class StringPermuatation {
 	public static void main(String[] args) {
 		String s1 = "ABCD";

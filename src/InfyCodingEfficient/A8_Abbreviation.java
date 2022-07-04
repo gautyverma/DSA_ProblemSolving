@@ -1,8 +1,5 @@
 package InfyCodingEfficient;
 
-import java.util.Scanner;
-
-
 public class A8_Abbreviation {
 public static void main(String[] args) {
 	

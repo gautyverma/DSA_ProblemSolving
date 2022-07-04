@@ -1,8 +1,5 @@
 package hackerRank.backtracking;
 
-import java.util.Arrays;
-import java.util.Iterator;
-
 public class KnightsTour {
 	public static void main(String[] args) {
 		solveKT();
