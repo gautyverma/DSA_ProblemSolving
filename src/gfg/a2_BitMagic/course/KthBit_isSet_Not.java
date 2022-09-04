@@ -17,8 +17,8 @@ package gfg.a2_BitMagic.course;
 */
 public class KthBit_isSet_Not {
 	public static void main(String[] args) {
-		int n = 39;
-		int k = 5;
+		int n = 77;
+		int k = 4;
 		navie(n,k);
 		kthisSet_leftshift(n, k);
 		kthisSet_rightshift(n, k);
