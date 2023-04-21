@@ -38,6 +38,7 @@ public class a4_MaximumIndex {
     //
     int[] arr = {34, 8, 10, 3, 2, 80, 30, 33, 1};
     System.out.println(maxIndexDiffNavieSol(arr, arr.length));
+    System.out.println("-------------------------------------");
     System.out.println(maxIndexDiffEffSol(arr, arr.length));
   }
 

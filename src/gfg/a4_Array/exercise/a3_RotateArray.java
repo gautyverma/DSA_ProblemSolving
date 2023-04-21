@@ -8,8 +8,6 @@ import java.util.Collections;
 * Given an unsorted array arr[] of size N.
 * Rotate the array to the left (counter-clockwise direction) by D steps, where D is a positive integer.
 
-
-
     Example 1:
 
     Input:
@@ -18,7 +16,6 @@ import java.util.Collections;
     Output: 3 4 5 1 2
     Explanation: 1 2 3 4 5  when rotated
     by 2 elements, it becomes 3 4 5 1 2.
-
  */
 public class a3_RotateArray {
   public static void main(String[] args) {
