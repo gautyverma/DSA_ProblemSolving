@@ -14,16 +14,16 @@ public class a1_BinarySerach {
       case 3: arr[mid] < item  -> low = mid +1
    */
   private static int effBinarySearch(int[] arr, int item) {
-    int i = 0, j = arr.length, mid;
-    while (i < j) {
-      mid = (i + j) / 2;
+    int low = 0, high = arr.length - 1, mid;
+    while (low <= high) {
+      mid = (low + high) / 2;
       if (arr[mid] == item) {
         return mid;
       }
       if (arr[mid] > item) {
-        j = mid - 1;
+        high = mid - 1;
       } else {
-        i = mid + 1;
+        low = mid + 1;
       }
     }
     return -1;
