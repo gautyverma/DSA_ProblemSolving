@@ -1,5 +1,8 @@
 package gfg.a5_Searching.course;
-
+/*
+Time Complexity - O(log n)
+Space Complexity - O(log n)
+*/
 public class a2_RecursiveBinarySearch {
   public static void main(String[] args) {
     int[] arr = {10, 20, 30, 40, 50, 60};

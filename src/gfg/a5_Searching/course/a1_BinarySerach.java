@@ -1,5 +1,10 @@
 package gfg.a5_Searching.course;
 
+/*
+Time Complexity - O(log n)
+Space Complexity - O(1)  - Cause we are using some variable for computations only
+*/
+
 public class a1_BinarySerach {
   public static void main(String[] args) {
     int[] arr = {10, 20, 30, 40, 50, 60};
