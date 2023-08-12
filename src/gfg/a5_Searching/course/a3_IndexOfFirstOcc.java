@@ -1,4 +1,7 @@
 package gfg.a5_Searching.course;
+/*
+ * Given a sorted array, find the first index of given item
+ */
 
 public class a3_IndexOfFirstOcc {
   public static void main(String[] args) {
