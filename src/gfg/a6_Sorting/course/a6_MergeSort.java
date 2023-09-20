@@ -38,6 +38,9 @@ public class a6_MergeSort {
     while (j < n2) arr[k++] = right[j++];
   }
   /*
+
+  // Method for merge which returns an array-
+
     private void int[] merge(int[] arr, int low, int mid, int high) {
       int n = arr.length, index = 0, j = mid + 1;
       int[] res = new int[n];
