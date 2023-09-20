@@ -1,6 +1,6 @@
 package gfg.a6_Sorting.course;
 
-public class a7_IntersectionSortedArrays {
+public class a7_IntersectionTwoSortedArrays {
   public static void main(String[] args) {
     int[] a = {1, 2, 3, 3, 3, 4, 5, 7};
     int[] b = {1, 2, 3, 3, 3, 4, 5, 7};
