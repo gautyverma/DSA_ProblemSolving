@@ -22,7 +22,20 @@ public class a1_SimpleLLImpl {
     head.next.next.next.next = new Node(30);
     head.next.next.next.next.next = new Node(35);
 
+    // Traversing using loops
     printLL(head);
+
+    // Traversing using recursion
+    System.out.println(" \nRecursion ");
+    printLLRecursive(head);
+  }
+
+  private static void printLLRecursive(Node head) {
+    if(head != null){
+      System.out.print(head.data +" ");
+      printLLRecursive(head.next);
+    }
+    return;
   }
 
   private static void printLL(Node head) {
