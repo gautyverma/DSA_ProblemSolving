@@ -14,13 +14,21 @@ public class a1_SimpleLLImpl {
         t1.next = t2;
     */
 
-    //  --- Basic Impl - 2
-    Node head = new Node(10);
-    head.next = new Node(15);
-    head.next.next = new Node(20);
-    head.next.next.next = new Node(25);
-    head.next.next.next.next = new Node(30);
-    head.next.next.next.next.next = new Node(35);
+    /*
+        //  --- Basic Impl - 2
+        Node head = new Node(10);
+        head.next = new Node(15);
+        head.next.next = new Node(20);
+        head.next.next.next = new Node(25);
+        head.next.next.next.next = new Node(30);
+        head.next.next.next.next.next = new Node(35);
+
+    */
+    Node head = null;
+    head = insertAtEnd(head, 2);
+    head = insertAtStart(head, 10);
+    //    head = insertAtStart(head, 7);
+    head = insertAtStart(head, 4);
 
     // Traversing using recursion
     System.out.println("Recursion");
@@ -28,10 +36,27 @@ public class a1_SimpleLLImpl {
     System.out.println("\n-------------");
 
     // ops - Insert at beginning of LL
-    System.out.println("<-insertion at beginning- >");
-    head = insertAtStart(head, 7);
+    System.out.println("<-insertion at beginning->");
+    head = insertAtStart(head, 1);
     printLL(head);
     System.out.println("\n-------------");
+
+    // ops - Insert at end of LL
+    System.out.println("<-insertion at end->");
+    head = insertAtEnd(head, 13);
+    printLL(head);
+    System.out.println("\n-------------");
+  }
+
+  private static Node insertAtEnd(Node head, int value) {
+    Node temp = new Node(value);
+    if (head == null) {
+      return temp;
+    }
+    Node curr = head;
+    while (curr.next != null) curr = curr.next;
+    curr.next = temp;
+    return head;
   }
 
   private static Node insertAtStart(Node head, int value) {
