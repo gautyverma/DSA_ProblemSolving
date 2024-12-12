@@ -50,6 +50,35 @@ public class a1_SimpleLLImpl {
     head = insertAtMiddle(head, 3, 7);
     printLL(head);
     System.out.println("\n-------------");
+
+    // ops - Deletion at start
+    System.out.println("<-deletion at start->");
+    head = deleteAtStart(head);
+    printLL(head);
+    System.out.println("\n-------------");
+
+    // ops - Deletion at end
+    System.out.println("<-deletion at End->");
+    head = deleteAtEnd(head);
+    printLL(head);
+    System.out.println("\n-------------");
+  }
+
+  private static Node deleteAtEnd(Node head) {
+    if (head == null || head.next == null) return null;
+    Node prev = head;
+    Node curr = head.next;
+    while(curr.next != null){
+      prev = curr;
+      curr = curr.next;
+    }
+    prev.next = null;
+    return head;
+  }
+
+  private static Node deleteAtStart(Node head) {
+    if (head == null || head.next == null) return null;
+    else return head.next;
   }
 
   private static Node insertAtMiddle(Node head, int pos, int value) {
