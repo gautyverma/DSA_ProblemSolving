@@ -22,10 +22,10 @@ public class a1_SimpleLLImpl {
         head.next.next.next.next.next = new Node(35);
     */
 
-    Node head = null;
+    NodeSingleLL head = null;
     head = insertAtEnd(head, 2);
     head = insertAtStart(head, 10);
-    //    head = insertAtStart(head, 7);
+    head = insertAtStart(head, 7);
     head = insertAtStart(head, 4);
 
     // Traversing using recursion
@@ -62,13 +62,50 @@ public class a1_SimpleLLImpl {
     head = deleteAtEnd(head);
     printLL(head);
     System.out.println("\n-------------");
+
+    // ops - Searching LL
+    System.out.println("<-Search value in LL and return its position->");
+    System.out.println("--> Iterative");
+    System.out.println(searchLLIter(head, 10));
+    System.out.println(searchLLIter(head, 100));
+    System.out.println("--> Recursive");
+    System.out.println(searchLLRec(head, 10));
+    System.out.println(searchLLRec(head, 100));
+    System.out.println("-------------");
   }
 
-  private static Node deleteAtEnd(Node head) {
+  private static int searchLLRec(NodeSingleLL head, int value) {
+    if(head == null)
+      return -1;
+    if(head.data == value){
+      return 1;
+    }
+    else{
+      int res = searchLLRec(head.next,value);
+      if(res == -1)
+        return -1;
+      else
+        return res + 1;
+    }
+  }
+
+  private static int searchLLIter(NodeSingleLL head, int value) {
+    int posCount = 1;
+    while (head != null) {
+      if (head.data == value) {
+        return posCount;
+      }
+      head = head.next;
+      posCount++;
+    }
+    return -1;
+  }
+
+  private static NodeSingleLL deleteAtEnd(NodeSingleLL head) {
     if (head == null || head.next == null) return null;
-    Node prev = head;
-    Node curr = head.next;
-    while(curr.next != null){
+    NodeSingleLL prev = head;
+    NodeSingleLL curr = head.next;
+    while (curr.next != null) {
       prev = curr;
       curr = curr.next;
     }
@@ -76,18 +113,18 @@ public class a1_SimpleLLImpl {
     return head;
   }
 
-  private static Node deleteAtStart(Node head) {
+  private static NodeSingleLL deleteAtStart(NodeSingleLL head) {
     if (head == null || head.next == null) return null;
     else return head.next;
   }
 
-  private static Node insertAtMiddle(Node head, int pos, int value) {
-    Node temp = new Node(value);
+  private static NodeSingleLL insertAtMiddle(NodeSingleLL head, int pos, int value) {
+    NodeSingleLL temp = new NodeSingleLL(value);
     if (pos == 1) {
       temp.next = head;
       return temp;
     }
-    Node curr = head;
+    NodeSingleLL curr = head;
     for (int i = 1; i <= pos - 2 && curr != null; i++) curr = curr.next;
     if (curr == null) return head;
     temp.next = curr.next;
@@ -95,18 +132,18 @@ public class a1_SimpleLLImpl {
     return head;
   }
 
-  private static Node insertAtEnd(Node head, int value) {
-    Node temp = new Node(value);
+  private static NodeSingleLL insertAtEnd(NodeSingleLL head, int value) {
+    NodeSingleLL temp = new NodeSingleLL(value);
     if (head == null) {
       return temp;
     }
-    Node curr = head;
+    NodeSingleLL curr = head;
     while (curr.next != null) curr = curr.next;
     curr.next = temp;
     return head;
   }
 
-  private static Node insertAtStart(Node head, int value) {
+  private static NodeSingleLL insertAtStart(NodeSingleLL head, int value) {
     /*
     if (head == null) {
       head = new Node(value);
@@ -118,12 +155,12 @@ public class a1_SimpleLLImpl {
     return head;
     */
 
-    Node temp = new Node(value);
+    NodeSingleLL temp = new NodeSingleLL(value);
     temp.next = head;
     return temp;
   }
 
-  private static void printLLRecursive(Node head) {
+  private static void printLLRecursive(NodeSingleLL head) {
     if (head != null) {
       System.out.print(head.data + " ");
       printLLRecursive(head.next);
@@ -131,8 +168,8 @@ public class a1_SimpleLLImpl {
     return;
   }
 
-  private static void printLL(Node head) {
-    Node curr = head;
+  private static void printLL(NodeSingleLL head) {
+    NodeSingleLL curr = head;
     while (curr != null) {
       System.out.print(curr.data + " ");
       curr = curr.next;
