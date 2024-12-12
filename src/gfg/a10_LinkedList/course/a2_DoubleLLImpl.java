@@ -29,6 +29,37 @@ public class a2_DoubleLLImpl {
     head = insertAtEnd(head, 45);
     printDLL(head);
     System.out.println("----------------");
+
+    // ops - Delete at beginning of DLL
+    System.out.println("<-Deletion at beginning->");
+    head = deleteAtStart(head);
+    printDLL(head);
+    System.out.println("----------------");
+
+    // ops - Delete at ending of DLL
+    System.out.println("<-Deletion at ending->");
+    head = deleteAtEnd(head);
+    printDLL(head);
+    System.out.println("----------------");
+  }
+
+  private static NodeDoubleLL deleteAtEnd(NodeDoubleLL head) {
+    if(head == null || head.next == null)
+      return null;
+    NodeDoubleLL curr = head;
+    while(curr.next.next!=null){
+      curr = curr.next;
+    }
+    curr.next = null;
+    return head;
+  }
+
+  private static NodeDoubleLL deleteAtStart(NodeDoubleLL head) {
+    if(head == null || head.next == null)
+      return null;
+    head = head.next;
+    head.prev = null;
+    return head;
   }
 
   private static NodeDoubleLL insertAtEnd(NodeDoubleLL head, int value) {
