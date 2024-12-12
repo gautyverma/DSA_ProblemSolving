@@ -1,6 +1,6 @@
 package gfg.a10_LinkedList.course;
 
-public class a1_SimpleLLImpl {
+public class a1_SingleLLImpl {
   public static void main(String[] args) {
 
     /*
@@ -37,31 +37,31 @@ public class a1_SimpleLLImpl {
     System.out.println("<-insertion at beginning->");
     head = insertAtStart(head, 1);
     printLL(head);
-    System.out.println("\n-------------");
+    System.out.println("-------------");
 
     // ops - Insert at end of LL
     System.out.println("<-insertion at end->");
     head = insertAtEnd(head, 13);
     printLL(head);
-    System.out.println("\n-------------");
+    System.out.println("-------------");
 
     // ops - Insert at middle of LL after some passes
     System.out.println("<-insertion at middle->");
     head = insertAtMiddle(head, 3, 7);
     printLL(head);
-    System.out.println("\n-------------");
+    System.out.println("-------------");
 
     // ops - Deletion at start
     System.out.println("<-deletion at start->");
     head = deleteAtStart(head);
     printLL(head);
-    System.out.println("\n-------------");
+    System.out.println("-------------");
 
     // ops - Deletion at end
     System.out.println("<-deletion at End->");
     head = deleteAtEnd(head);
     printLL(head);
-    System.out.println("\n-------------");
+    System.out.println("-------------");
 
     // ops - Searching LL
     System.out.println("<-Search value in LL and return its position->");
@@ -75,17 +75,13 @@ public class a1_SimpleLLImpl {
   }
 
   private static int searchLLRec(NodeSingleLL head, int value) {
-    if(head == null)
-      return -1;
-    if(head.data == value){
+    if (head == null) return -1;
+    if (head.data == value) {
       return 1;
-    }
-    else{
-      int res = searchLLRec(head.next,value);
-      if(res == -1)
-        return -1;
-      else
-        return res + 1;
+    } else {
+      int res = searchLLRec(head.next, value);
+      if (res == -1) return -1;
+      else return res + 1;
     }
   }
 
@@ -174,5 +170,6 @@ public class a1_SimpleLLImpl {
       System.out.print(curr.data + " ");
       curr = curr.next;
     }
+    System.out.println();
   }
 }
