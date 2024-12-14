@@ -1,10 +1,10 @@
 package gfg.a10_LinkedList.course;
 
-public class NodeSingleLL {
+public class Node {
   int data;
-  NodeSingleLL next;
+  Node next;
 
-  NodeSingleLL(int value) {
+  Node(int value) {
     data = value;
     next = null;
   }

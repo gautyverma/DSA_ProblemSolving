@@ -22,7 +22,7 @@ public class a1_SingleLLImpl {
         head.next.next.next.next.next = new Node(35);
     */
 
-    NodeSingleLL head = null;
+    Node head = null;
     head = insertAtEnd(head, 2);
     head = insertAtStart(head, 10);
     head = insertAtStart(head, 7);
@@ -74,7 +74,7 @@ public class a1_SingleLLImpl {
     System.out.println("-------------");
   }
 
-  private static int searchLLRec(NodeSingleLL head, int value) {
+  private static int searchLLRec(Node head, int value) {
     if (head == null) return -1;
     if (head.data == value) {
       return 1;
@@ -85,7 +85,7 @@ public class a1_SingleLLImpl {
     }
   }
 
-  private static int searchLLIter(NodeSingleLL head, int value) {
+  private static int searchLLIter(Node head, int value) {
     int posCount = 1;
     while (head != null) {
       if (head.data == value) {
@@ -97,10 +97,10 @@ public class a1_SingleLLImpl {
     return -1;
   }
 
-  private static NodeSingleLL deleteAtEnd(NodeSingleLL head) {
+  private static Node deleteAtEnd(Node head) {
     if (head == null || head.next == null) return null;
-    NodeSingleLL prev = head;
-    NodeSingleLL curr = head.next;
+    Node prev = head;
+    Node curr = head.next;
     while (curr.next != null) {
       prev = curr;
       curr = curr.next;
@@ -109,18 +109,18 @@ public class a1_SingleLLImpl {
     return head;
   }
 
-  private static NodeSingleLL deleteAtStart(NodeSingleLL head) {
+  private static Node deleteAtStart(Node head) {
     if (head == null || head.next == null) return null;
     else return head.next;
   }
 
-  private static NodeSingleLL insertAtMiddle(NodeSingleLL head, int pos, int value) {
-    NodeSingleLL temp = new NodeSingleLL(value);
+  private static Node insertAtMiddle(Node head, int pos, int value) {
+    Node temp = new Node(value);
     if (pos == 1) {
       temp.next = head;
       return temp;
     }
-    NodeSingleLL curr = head;
+    Node curr = head;
     for (int i = 1; i <= pos - 2 && curr != null; i++) curr = curr.next;
     if (curr == null) return head;
     temp.next = curr.next;
@@ -128,18 +128,18 @@ public class a1_SingleLLImpl {
     return head;
   }
 
-  private static NodeSingleLL insertAtEnd(NodeSingleLL head, int value) {
-    NodeSingleLL temp = new NodeSingleLL(value);
+  private static Node insertAtEnd(Node head, int value) {
+    Node temp = new Node(value);
     if (head == null) {
       return temp;
     }
-    NodeSingleLL curr = head;
+    Node curr = head;
     while (curr.next != null) curr = curr.next;
     curr.next = temp;
     return head;
   }
 
-  private static NodeSingleLL insertAtStart(NodeSingleLL head, int value) {
+  private static Node insertAtStart(Node head, int value) {
     /*
     if (head == null) {
       head = new Node(value);
@@ -151,12 +151,12 @@ public class a1_SingleLLImpl {
     return head;
     */
 
-    NodeSingleLL temp = new NodeSingleLL(value);
+    Node temp = new Node(value);
     temp.next = head;
     return temp;
   }
 
-  private static void printLLRecursive(NodeSingleLL head) {
+  private static void printLLRecursive(Node head) {
     if (head != null) {
       System.out.print(head.data + " ");
       printLLRecursive(head.next);
@@ -164,8 +164,8 @@ public class a1_SingleLLImpl {
     return;
   }
 
-  private static void printLL(NodeSingleLL head) {
-    NodeSingleLL curr = head;
+  private static void printLL(Node head) {
+    Node curr = head;
     while (curr != null) {
       System.out.print(curr.data + " ");
       curr = curr.next;
