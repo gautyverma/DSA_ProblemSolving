@@ -47,4 +47,16 @@ public class OPS_LL {
     }
     System.out.println("Middle element of LL :" + slow.data);
   }
+
+  public Node reverseLL(Node head) {
+    Node curr = head;
+    Node prev = null;
+    while (curr != null) {
+      Node next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    return prev; // prev is new head
+  }
 }

@@ -5,7 +5,7 @@ public class a7_ReverseLL {
     OPS_LL ll = new OPS_LL();
     Node head = ll.initializeSortedLL();
     ll.printLL(head);
-    head = reverseLL(head);
+    head = ll.reverseLL(head);
     ll.printLL(head);
   }
 
