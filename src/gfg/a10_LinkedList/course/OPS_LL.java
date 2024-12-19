@@ -5,8 +5,14 @@ public class OPS_LL {
   public Node initializeSortedLL() {
     Node head = null;
     head = insertSort(head, 10);
+    head = insertSort(head, 10);
+    head = insertSort(head, 10);
+    head = insertSort(head, 30);
+    head = insertSort(head, 30);
     head = insertSort(head, 30);
     head = insertSort(head, 20);
+    head = insertSort(head, 60);
+    head = insertSort(head, 50);
     head = insertSort(head, 60);
     head = insertSort(head, 50);
     head = insertSort(head, 90);
