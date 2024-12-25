@@ -3,7 +3,7 @@ package gfg.a10_LinkedList.course;
 public class a9_RmDuplicatesSortedLL {
   public static void main(String[] args) {
     OPS_LL ll = new OPS_LL();
-    Node head = ll.initializeSortedLL();
+    Node head = ll.initializeDuplicateSortedLL();
     ll.printLL(head);
     rmDupFrmSortedLL(head);
     ll.printLL(head);
