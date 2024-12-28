@@ -16,7 +16,7 @@ public class StackArray {
     } else {
       top++;
       arr[top] = value;
-      System.out.println(value + " pushed into stack.");
+//      System.out.println(value + " pushed into stack.");
       return true;
     }
   }
