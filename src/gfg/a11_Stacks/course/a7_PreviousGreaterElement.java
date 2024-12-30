@@ -2,7 +2,7 @@ package gfg.a11_Stacks.course;
 
 import java.util.Stack;
 
-public class a7_PreviousGreater {
+public class a7_PreviousGreaterElement {
   public static void main(String[] args) {
     int[] arr = {15, 10, 18, 12, 4, 6, 2, 8};
     printPreviousGreater(arr);
