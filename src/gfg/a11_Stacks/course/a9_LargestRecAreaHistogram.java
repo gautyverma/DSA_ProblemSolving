@@ -9,6 +9,26 @@ public class a9_LargestRecAreaHistogram {
     int[] arr = {6, 2, 5, 4, 1, 5, 6};
     System.out.println("1.Naive method: " + getMaxArea(arr));
     System.out.println("2.Better method: " + getMaxArea2(arr));
+    System.out.println("3.Efficient method: " + getMaxArea3(arr));
+  }
+
+  private static int getMaxArea3(int[] arr) {
+    Stack s = new Stack();
+    int res = 0;
+    for (int i = 0; i < arr.length; i++) {
+      while (!s.isEmpty() && arr[(int) s.peek()] >= arr[i]) {
+        int tp = (int) s.pop();
+        int curr = arr[tp] * (!s.isEmpty() ? (i - 1 - (int) s.peek()) : i);
+        res = Math.max(res, curr);
+      }
+      s.push(i);
+    }
+    while (!s.isEmpty()) {
+      int tp = (int) s.pop();
+      int curr = arr[tp] * (s.isEmpty() ? arr.length : arr.length - 1 - (int) s.peek());
+      res = Math.max(res, curr);
+    }
+    return res;
   }
 
   private static int getMaxArea2(int[] arr) {
