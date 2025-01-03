@@ -2,6 +2,7 @@ package gfg.a12_Queue.course;
 
 import java.util.Queue;
 
+// Similar way we can implement queue using stacks
 public class a2_StackUsingQueue {
   Queue<Integer> q1, q2;
 
