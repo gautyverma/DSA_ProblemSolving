@@ -17,14 +17,29 @@ package gfg.a13_Deque.course;
  * all petrol pump with given petrol capacity and should come back to same petrol pump.
  *
  * */
-public class a3_FirstCirulcarTour {
+public class a3_FirstCircularTour {
   public static void main(String[] args) {
     int[] petrol = {4, 8, 7, 4};
     int[] distance = {6, 5, 3, 5};
-    System.out.println("Naive Solution - " + firstPetrolPump(petrol, distance));
+    System.out.println("Naive Solution - " + firstPetrolPumpNaiveSol(petrol, distance));
+    System.out.println("Efficient Solution - " + firstPetrolPumpEffSol(petrol, distance));
   }
 
-  private static int firstPetrolPump(int[] petrol, int[] distance) {
+  private static int firstPetrolPumpEffSol(int[] petrol, int[] distance) {
+    int n = petrol.length;
+    int start = 0, currPetrol = 0, prevPetrol = 0;
+    for (int i = 0; i < n; i++) {
+      currPetrol += petrol[i] - distance[i];
+      if (currPetrol < 0) {
+        start = i + 1;
+        prevPetrol += currPetrol;
+        currPetrol = 0;
+      }
+    }
+    return (currPetrol + prevPetrol) >= 0 ? start + 1 : -1;
+  }
+
+  private static int firstPetrolPumpNaiveSol(int[] petrol, int[] distance) {
     int n = petrol.length;
     for (int start = 0; start < n; start++) {
       int cp = 0; // petrol capacity
