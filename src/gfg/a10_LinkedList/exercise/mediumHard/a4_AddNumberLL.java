@@ -1,4 +1,4 @@
-package gfg.a10_LinkedList.exercise;
+package gfg.a10_LinkedList.exercise.mediumHard;
 
 /*
 *
