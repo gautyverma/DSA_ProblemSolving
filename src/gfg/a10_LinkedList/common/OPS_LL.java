@@ -119,7 +119,7 @@ public class OPS_LL {
     return head;
   }
 
-  private Node insertAtStart(Node head, int value) {
+  public Node insertAtStart(Node head, int value) {
     Node temp = new Node(value);
     temp.next = head;
     return temp;
