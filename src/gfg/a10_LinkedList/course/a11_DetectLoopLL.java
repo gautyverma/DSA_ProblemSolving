@@ -22,6 +22,11 @@ public class a11_DetectLoopLL {
     System.out.println(isLoopFloydInLL(ll.initializeCircularLL()));
   }
 
+  /*
+   * Detect loop using floyd cycle detection
+   * 1. Initialize slowPointer and fastPointer from head.
+   * 2. Move slowPointer by 1 and fastPointer by 2. If they meet loop is there.
+   * */
   private static boolean isLoopFloydInLL(Node head) {
     Node slowP = head,fastP = head;
     while(fastP != null && fastP.next !=null){
@@ -33,13 +38,6 @@ public class a11_DetectLoopLL {
     }
     return false;
   }
-
-  /*
-  * Detect loop using floyd cycle detection
-  * 1. Initialize slowPointer and fastPointer from head.
-  * 2. Move slowPointer by 1 and fastPointer by 2. If they meet loop is there.
-  * */
-
 
 
   /*
