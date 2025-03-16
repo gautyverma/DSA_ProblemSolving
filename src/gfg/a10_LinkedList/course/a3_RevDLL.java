@@ -1,5 +1,7 @@
 package gfg.a10_LinkedList.course;
 
+import gfg.a10_LinkedList.common.NodeDoubleLL;
+
 public class a3_RevDLL {
   public static void main(String[] args) {
     NodeDoubleLL head = new NodeDoubleLL(10);

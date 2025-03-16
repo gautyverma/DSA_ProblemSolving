@@ -1,5 +1,7 @@
 package gfg.a10_LinkedList.course;
 
+import gfg.a10_LinkedList.common.NodeDoubleLL;
+
 public class a2_DoubleLLImpl {
   public static void main(String[] args) {
 

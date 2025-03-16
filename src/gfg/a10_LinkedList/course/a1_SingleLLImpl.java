@@ -1,5 +1,7 @@
 package gfg.a10_LinkedList.course;
 
+import gfg.a10_LinkedList.common.Node;
+
 public class a1_SingleLLImpl {
   public static void main(String[] args) {
 

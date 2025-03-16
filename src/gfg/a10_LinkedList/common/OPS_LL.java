@@ -1,4 +1,4 @@
-package gfg.a10_LinkedList.course;
+package gfg.a10_LinkedList.common;
 
 public class OPS_LL {
 
@@ -106,5 +106,22 @@ public class OPS_LL {
       curr = next;
     }
     return prev; // prev is new head
+  }
+
+  public Node initializeLL() {
+    Node head = null;
+    head = insertAtStart(head, 6);
+    head = insertAtStart(head, 10);
+    head = insertAtStart(head, 3);
+    head = insertAtStart(head, 1);
+    head = insertAtStart(head, 9);
+    head = insertAtStart(head, 7);
+    return head;
+  }
+
+  private Node insertAtStart(Node head, int value) {
+    Node temp = new Node(value);
+    temp.next = head;
+    return temp;
   }
 }

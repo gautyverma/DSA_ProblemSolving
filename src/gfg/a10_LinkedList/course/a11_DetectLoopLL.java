@@ -1,5 +1,8 @@
 package gfg.a10_LinkedList.course;
 
+import gfg.a10_LinkedList.common.Node;
+import gfg.a10_LinkedList.common.OPS_LL;
+
 import java.util.HashSet;
 
 public class a11_DetectLoopLL {

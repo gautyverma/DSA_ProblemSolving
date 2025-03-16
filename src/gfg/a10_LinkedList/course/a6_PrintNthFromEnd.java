@@ -1,5 +1,8 @@
 package gfg.a10_LinkedList.course;
 
+import gfg.a10_LinkedList.common.Node;
+import gfg.a10_LinkedList.common.OPS_LL;
+
 public class a6_PrintNthFromEnd {
   public static void main(String[] args) {
     // 1 - method use len of LL and len - n + 1 to get position of node
