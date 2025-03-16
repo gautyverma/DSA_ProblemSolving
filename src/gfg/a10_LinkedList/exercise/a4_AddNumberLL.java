@@ -27,29 +27,32 @@ Constraints:
 import gfg.a10_LinkedList.common.Node;
 import gfg.a10_LinkedList.common.OPS_LL;
 
-import java.math.BigInteger;
-
 public class a4_AddNumberLL {
   public static void main(String[] args) {
 
     OPS_LL ll = new OPS_LL();
     // LL1
-    Node head1 = new Node(5);
-    head1 = ll.insertAtStart(head1, 4);
+    Node head1 = null;
+    int[] arr1 = {8, 5, 1, 6, 7, 0, 9, 2, 4, 4, 0, 9};
+    for (int i : arr1) {
+      head1 = ll.insertAtStart(head1, i);
+    }
     System.out.println("LL1 - ");
     ll.printLL(head1);
 
     // LL2
-    Node head2 = new Node(5);
-    head2 = ll.insertAtStart(head2, 4);
-    head2 = ll.insertAtStart(head2, 3);
+    Node head2 = null;
+    int[] arr2 = {7, 4, 7, 8, 1, 0, 5, 9, 0, 8, 3, 0};
+    for (int i : arr2) {
+      head2 = ll.insertAtStart(head2, i);
+    }
     System.out.println("LL2 - ");
     ll.printLL(head2);
 
+    System.out.println("--- Self approach ---");
     ll.printLL(addTwoLists(head1, head2));
-
-    //    Integer t1 = 851670924409;
-    long t1 = 8516709244L;
+    System.out.println("--- GFG approach ---");
+    ll.printLL(addTwoListsGFG(head1, head2));
   }
 
   private static Node addTwoLists(Node num1, Node num2) {
@@ -70,8 +73,6 @@ public class a4_AddNumberLL {
     long temp3 = temp1 + temp2;
     System.out.println("sum - " + temp3);
 
-    temp3 = 851670924409L + 747810590830L;
-
     Node head = null;
     while (temp3 != 0) {
       /*
@@ -90,4 +91,96 @@ public class a4_AddNumberLL {
     temp.next = head;
     return temp;
   }
+
+  // ------------------------------------ GFG -------------------------
+  // Function to reverse the linked list
+  static Node reverse(Node head) {
+    Node prev = null;
+    Node curr = head;
+    Node next;
+
+    while (curr != null) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    return prev;
+  }
+
+  // Function to find the length of linked list
+  static int countNodes(Node head) {
+    int len = 0;
+    Node curr = head;
+
+    while (curr != null) {
+      len += 1;
+      curr = curr.next;
+    }
+    return len;
+  }
+
+  // function to trim leading zeros in linked list
+  static Node trimLeadingZeros(Node head) {
+    while (head != null && head.data == 0) {
+      head = head.next;
+    }
+    return head;
+  }
+
+  // Function to add two numbers represented by linked list
+  static Node addTwoListsGFG(Node num1, Node num2) {
+    num1 = trimLeadingZeros(num1);
+    num2 = trimLeadingZeros(num2);
+
+    // Find the length of both the linked lists
+    int len1 = countNodes(num1);
+    int len2 = countNodes(num2);
+
+    // If num1 is smaller, swap the two linked lists by
+    // calling the function with reversed parameters
+    if (len1 < len2) {
+      return addTwoListsGFG(num2, num1);
+    }
+
+    int carry = 0;
+    num1 = reverse(num1);
+    num2 = reverse(num2);
+
+    Node res = num1;
+
+    // Iterate till either num2 is not empty or
+    // carry is greater than 0
+    while (num2 != null || carry != 0) {
+
+      // Add carry to num1
+      num1.data += carry;
+
+      // If num2 linked list is not empty, add it to num1
+      if (num2 != null) {
+        num1.data += num2.data;
+        num2 = num2.next;
+      }
+
+      // Store the carry for the next nodes
+      carry = num1.data / 10;
+
+      // Store the remainder in num1
+      num1.data = num1.data % 10;
+
+      // If we are at the last node of num1 but carry is
+      // still left, then append a new node to num1
+      if (num1.next == null && carry != 0) {
+        num1.next = new Node(0);
+      }
+
+      num1 = num1.next;
+    }
+
+    // Reverse the resultant linked list to get the
+    // required linked list
+    return reverse(res);
+  }
+
+  // ============================================
 }
