@@ -1,17 +1,40 @@
-package gfg.a10_LinkedList.course;
+package gfg.a10_LinkedList.exercise.mediumHard;
 
 import gfg.a10_LinkedList.common.Node;
 import gfg.a10_LinkedList.common.OPS_LL;
 
-public class a15_MergeTwoSortedLL {
+import java.util.ArrayList;
+import java.util.List;
+
+public class a8_MergeKSortedLL {
   public static void main(String[] args) {
     OPS_LL ll = new OPS_LL();
     Node head1 = ll.initializeSortedLL();
     Node head2 = ll.initializeSortedLL();
-    ll.printLL(mergeSortedLL(head1, head2));
+    Node head3 = ll.initializeSortedLL();
+
+    List<Node> list = new ArrayList<>();
+    list.add(head1);
+    list.add(head2);
+    list.add(head3);
+    ll.printLL(mergeKSortedLL(list));
   }
 
-  private static Node mergeSortedLL(Node head1, Node head2) {
+  private static Node mergeKSortedLL(List<Node> list) {
+    if (list.size() == 0) {
+      return null;
+    } else if (list.size() == 1) {
+      return list.get(0);
+    } else {
+      Node l1 = list.get(0);
+      for (int i = 1; i < list.size(); i++) {
+        l1 = mergeTwoSortedLL(l1, list.get(i));
+      }
+      return l1;
+    }
+  }
+
+  private static Node mergeTwoSortedLL(Node head1, Node head2) {
     if (head1 == null) return head2;
     if (head2 == null) return head1;
     Node head = null, tail = null;
