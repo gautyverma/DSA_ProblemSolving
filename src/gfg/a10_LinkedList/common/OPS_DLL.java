@@ -30,4 +30,18 @@ public class OPS_DLL {
     }
     System.out.println();
   }
+
+    public NodeDoubleLL initializeSortedDLL() {
+      NodeDoubleLL head = null;
+      head = insertAtStart(head, 51);
+      head = insertAtStart(head, 30);
+      head = insertAtStart(head, 28);
+      head = insertAtStart(head, 19);
+      head = insertAtStart(head, 15);
+      head = insertAtStart(head, 10);
+      head = insertAtStart(head, 5);
+      head = insertAtStart(head, 4);
+      head = insertAtStart(head, 3);
+      return head;
+    }
 }
