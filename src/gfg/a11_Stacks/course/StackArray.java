@@ -16,7 +16,8 @@ public class StackArray {
     } else {
       top++;
       arr[top] = value;
-//      System.out.println(value + " pushed into stack.");
+      // arr[++top] = value;
+      // System.out.println(value + " pushed into stack.");
       return true;
     }
   }
@@ -29,6 +30,8 @@ public class StackArray {
     int res = arr[top];
     top--;
     return res;
+
+    // return arr[top--];
   }
 
   int peek() {
@@ -49,7 +52,7 @@ public class StackArray {
 
   void print() {
     for (int i = top; i > -1; i--) {
-      System.out.print(arr[i]+" ");
+      System.out.print(arr[i] + " ");
     }
     System.out.println();
   }
