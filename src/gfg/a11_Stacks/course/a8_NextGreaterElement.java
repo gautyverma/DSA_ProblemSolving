@@ -10,6 +10,15 @@ public class a8_NextGreaterElement {
     printNextGreater(arr);
   }
 
+  /**
+   * This method finds the Next Greater Element (NGE) for each element in the given array. - It
+   * processes elements from right to left using a stack. - For each element, it pops stack elements
+   * that are smaller or equal. - If the stack is empty, it means there is no greater element to the
+   * right, so -1 is added. - Otherwise, the top of the stack is the next greater element. - The
+   * element is then pushed onto the stack for future comparisons. - Since elements are processed
+   * from right to left, the result is stored in reverse order and corrected using
+   * Collections.reverse().
+   */
   private static void printNextGreater(int[] arr) {
     ArrayList<Integer> list = new ArrayList<>();
     Stack<Integer> s = new Stack<>();

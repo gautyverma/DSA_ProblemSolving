@@ -6,9 +6,9 @@ public class a6_StockSpan {
   public static void main(String[] args) {
     Integer[] arr = {30, 20, 25, 28, 27, 29};
     printSpanNaive(arr);
-    System.out.println("-----------");
+    System.out.println("\n-----------");
     printSpanEff(arr);
-    System.out.println("-----------");
+    System.out.println("\n-----------");
     ArrayList<Integer> arrList = new ArrayList<>(Arrays.asList(arr));
     System.out.println(calculateSpan(arrList));
   }
