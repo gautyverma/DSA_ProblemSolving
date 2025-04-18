@@ -74,6 +74,7 @@ public class a9_LargestRecAreaHistogram {
     }
     return list;
   }
+  
 
   private static int getMaxArea(int[] arr) {
     int res = 0;
