@@ -21,7 +21,6 @@ public class OPS_Tree {
     return root;
   }
 
-
   public Node initializeTreeUsingInsertion() {
     Node root = insertNode(null, 10);
     root = insertNode(root, 20);
@@ -89,5 +88,10 @@ public class OPS_Tree {
       postorderTraversal(root.right);
       System.out.print(root.key + " ");
     }
+  }
+
+  public int heightOfBT(Node root) {
+    if (root == null) return 0;
+    return Math.max(heightOfBT(root.left), heightOfBT(root.right)) + 1;
   }
 }
