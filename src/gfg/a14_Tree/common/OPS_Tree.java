@@ -133,4 +133,9 @@ public class OPS_Tree {
       printKDist(root.right, k - 1);
     }
   }
+
+  public int getSizeBt(Node root) {
+    if (root == null) return 0;
+    return 1 + getSizeBt(root.left) + getSizeBt(root.right);
+  }
 }
