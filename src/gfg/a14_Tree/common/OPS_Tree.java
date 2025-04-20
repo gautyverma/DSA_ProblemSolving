@@ -138,4 +138,9 @@ public class OPS_Tree {
     if (root == null) return 0;
     return 1 + getSizeBt(root.left) + getSizeBt(root.right);
   }
+
+  public int getMaxInBt(Node root) {
+    if (root == null) return Integer.MIN_VALUE;
+    return Math.max(root.key, Math.max(getMaxInBt(root.left), getMaxInBt(root.right)));
+  }
 }
