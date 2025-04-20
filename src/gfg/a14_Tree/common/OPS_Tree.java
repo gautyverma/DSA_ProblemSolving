@@ -4,7 +4,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class OPS_Tree {
-
+  /*
+  *           10
+            /    \
+          20      30
+         /  \       \
+       40   50       60
+            / \
+          70   80
+  * */
   public Node initializeTree() {
     Node root = new Node(10);
     // left subtree
@@ -21,18 +29,26 @@ public class OPS_Tree {
     return root;
   }
 
+  /*
+            10
+          /    \
+        20      30
+       /  \    /  \
+     40   50  60  70
+  */
+
   public Node initializeTreeUsingInsertion() {
-    Node root = insertNode(null, 10);
-    root = insertNode(root, 20);
-    root = insertNode(root, 30);
-    root = insertNode(root, 40);
-    root = insertNode(root, 50);
-    root = insertNode(root, 60);
-    root = insertNode(root, 70);
+    Node root = insertNodeAtLevel(null, 10);
+    root = insertNodeAtLevel(root, 20);
+    root = insertNodeAtLevel(root, 30);
+    root = insertNodeAtLevel(root, 40);
+    root = insertNodeAtLevel(root, 50);
+    root = insertNodeAtLevel(root, 60);
+    root = insertNodeAtLevel(root, 70);
     return root;
   }
 
-  private Node insertNode(Node root, int data) {
+  private Node insertNodeAtLevel(Node root, int data) {
 
     if (root == null) {
       return new Node(data);
@@ -93,5 +109,28 @@ public class OPS_Tree {
   public int heightOfBT(Node root) {
     if (root == null) return 0;
     return Math.max(heightOfBT(root.left), heightOfBT(root.right)) + 1;
+  }
+
+  /*
+   * approach - 1
+   * 1. Get the height of tree
+   * 2. loop over the height and printKdist which prints all nodes at specific level
+   * */
+  public void levelOrderTraversalNaiveSol(Node root) {
+    int heightOfTree = heightOfBT(root);
+    for (int i = 0; i < heightOfTree; i++) {
+      printKDist(root, i);
+      System.out.println();
+    }
+  }
+
+  private void printKDist(Node root, int k) {
+    if (root == null) return;
+    if (k == 0) {
+      System.out.print(root.key + " ");
+    } else {
+      printKDist(root.left, k - 1);
+      printKDist(root.right, k - 1);
+    }
   }
 }
