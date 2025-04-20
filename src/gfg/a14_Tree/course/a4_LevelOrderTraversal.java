@@ -14,6 +14,12 @@ public class a4_LevelOrderTraversal {
     t.levelOrderTraversalNaiveSol(root);
     System.out.println("Efficient Solution = ");
     printLevelOrder(root);
+
+    System.out.println("Efficient Solution = By line approach - 1");
+    printLevelOrderLineApp1(root);
+
+    System.out.println("Efficient Solution = By line approach - 2");
+    printLevelOrderLineApp2(root);
   }
 
   private static void printLevelOrder(Node root) {
@@ -30,6 +36,47 @@ public class a4_LevelOrderTraversal {
       if (curr.right != null) {
         q.add(curr.right);
       }
+    }
+    System.out.println();
+  }
+
+  private static void printLevelOrderLineApp1(Node root) {
+    if (root == null) return;
+    Queue<Node> q = new LinkedList<>();
+    q.add(root);
+    q.add(null);
+    while (q.size() > 1) {
+      Node curr = q.poll();
+      if (curr == null) {
+        System.out.println();
+        q.add(null);
+        continue;
+      }
+      System.out.print(curr.key + " ");
+
+      if (curr.left != null) {
+        q.add(curr.left);
+      }
+      if (curr.right != null) {
+        q.add(curr.right);
+      }
+    }
+    System.out.println();
+  }
+
+  private static void printLevelOrderLineApp2(Node root) {
+    if (root == null) return;
+    Queue<Node> q = new LinkedList<>();
+    q.add(root);
+    while (!q.isEmpty()) {
+      int count = q.size();
+      for (int i = 0; i < count; i++) {
+        Node curr = q.poll();
+        System.out.print(curr.key + " ");
+        if (curr.left != null) q.add(curr.left);
+        if (curr.right != null) q.add(curr.right);
+      }
+      System.out.println("\n----");
     }
   }
 }
