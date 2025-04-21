@@ -48,6 +48,31 @@ public class OPS_Tree {
     return root;
   }
 
+  /*
+  *           100
+            /    \
+          70      30
+         /  \       \
+       40   30       30
+            / \
+          10   20
+  * */
+  public Node initializeTreeChildrenSum() {
+    Node root = new Node(100);
+    // left subtree
+    root.left = new Node(70);
+    root.left.left = new Node(40);
+    root.left.right = new Node(30);
+
+    root.left.right.left = new Node(10);
+    root.left.right.right = new Node(20);
+
+    // right subtree
+    root.right = new Node(30);
+    root.right.right = new Node(30);
+    return root;
+  }
+
   private Node insertNodeAtLevel(Node root, int data) {
 
     if (root == null) {
