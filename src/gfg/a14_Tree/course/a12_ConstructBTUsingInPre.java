@@ -28,6 +28,11 @@ public class a12_ConstructBTUsingInPre {
     }
     Node root = new Node(preorder[preIndex++]);
 
+/*   For postOrder - Get root from postorder (from end to start)
+    Node root = new Node(postorder[postIndex--]);
+
+    */
+
     int inIndex = 0;
     for (int i = indexStart; i <= indexEnd; i++) {
       if (inorder[i] == root.key) {
