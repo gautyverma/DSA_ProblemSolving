@@ -4,7 +4,11 @@ import gfg.a14_Tree.common.Node;
 
 /*
 *
-* Given a binary tree, check if the tree can be folded or not. A tree can be folded if left and right subtrees of the tree are structure wise mirror image of each other. An empty tree is considered as foldable.
+* Given a binary tree, check if the tree can be folded or not.
+* A tree can be folded if left and right subtrees
+* of the tree are structure wise mirror image of each other.
+* An empty tree is considered as foldable.
+
 Consider the below trees:
 (a) and (b) can be folded.
 (c) and (d) cannot be folded.

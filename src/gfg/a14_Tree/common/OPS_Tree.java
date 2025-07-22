@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class OPS_Tree {
   /*
-  *           10
+  *           100
             /    \
           20      30
          /  \       \
@@ -14,7 +14,7 @@ public class OPS_Tree {
           70   80
   * */
   public Node initializeTree() {
-    Node root = new Node(10);
+    Node root = new Node(100);
     // left subtree
     root.left = new Node(20);
     root.left.left = new Node(40);

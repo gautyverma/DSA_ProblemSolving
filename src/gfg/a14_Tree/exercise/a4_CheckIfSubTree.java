@@ -23,6 +23,7 @@ public class a4_CheckIfSubTree {
     return isSubtreeHelper(T.left, S) || isSubtreeHelper(T.right, S);
   }
 
+  // Identical tree logic
   private static boolean isIdentical(Node r1, Node r2) {
     if (r1 == null && r2 == null) return true;
     if (r1 == null || r2 == null) return false;
