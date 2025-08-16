@@ -35,7 +35,7 @@ public class a12_ConstructBTUsingInPre {
 
     int inIndex = 0;
     for (int i = indexStart; i <= indexEnd; i++) {
-      if (inorder[i] == root.key) {
+      if (inorder[i] == root.data) {
         inIndex = i;
         break;
       }

@@ -37,14 +37,14 @@ public class a13_SpiralFormTree {
     while (!s1.isEmpty() || !s2.isEmpty()) {
       while (!s1.isEmpty()) {
         Node curr = s1.pop();
-        System.out.print(curr.key + " ");
+        System.out.print(curr.data + " ");
 
         if (curr.left != null) s2.push(curr.left);
         if (curr.right != null) s2.push(curr.right);
       }
       while (!s2.isEmpty()) {
         Node curr = s2.pop();
-        System.out.print(curr.key + " ");
+        System.out.print(curr.data + " ");
 
         if (curr.right != null) s1.push(curr.right);
         if (curr.left != null) s1.push(curr.left);
@@ -63,8 +63,8 @@ public class a13_SpiralFormTree {
       int count = q.size();
       for (int i = 0; i < count; i++) {
         Node curr = q.poll();
-        if (reverse) s.push(curr.key);
-        else System.out.print(curr.key + " ");
+        if (reverse) s.push(curr.data);
+        else System.out.print(curr.data + " ");
 
         if (curr.left != null) q.add(curr.left);
         if (curr.right != null) q.add(curr.right);

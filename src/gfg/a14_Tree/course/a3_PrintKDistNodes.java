@@ -15,7 +15,7 @@ public class a3_PrintKDistNodes {
   private static void printKDist(Node root, int k) {
     if (root == null) return;
     if (k == 0) {
-      System.out.print(root.key + " ");
+      System.out.print(root.data + " ");
     } else {
       printKDist(root.left, k - 1);
       printKDist(root.right, k - 1);

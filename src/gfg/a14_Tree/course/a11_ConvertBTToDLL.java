@@ -32,7 +32,7 @@ public class a11_ConvertBTToDLL {
   private static void printDLL(Node root) {
     Node curr = root;
     while (curr != null) {
-      System.out.print(curr.key + " ");
+      System.out.print(curr.data + " ");
       curr = curr.right;
     }
   }

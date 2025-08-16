@@ -13,12 +13,12 @@ public class a10_MaxDiffAncestorNode {
 
   static int maxDiffUtil(Node node, Res res) {
     if (node == null) return Integer.MAX_VALUE;
-    if (node.left == null && node.right == null) return node.key;
+    if (node.left == null && node.right == null) return node.data;
 
     int val = Math.min(maxDiffUtil(node.left, res), maxDiffUtil(node.right, res));
 
-    res.r = Math.max(res.r, node.key - val);
-    return Math.min(val, node.key);
+    res.r = Math.max(res.r, node.data - val);
+    return Math.min(val, node.data);
   }
 
   static int maxDiffN(Node root) {

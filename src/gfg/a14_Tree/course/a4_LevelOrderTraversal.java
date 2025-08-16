@@ -28,7 +28,7 @@ public class a4_LevelOrderTraversal {
     q.add(root);
     while (!q.isEmpty()) {
       Node curr = q.poll();
-      System.out.print(curr.key + " ");
+      System.out.print(curr.data + " ");
 
       if (curr.left != null) {
         q.add(curr.left);
@@ -52,7 +52,7 @@ public class a4_LevelOrderTraversal {
         q.add(null);
         continue;
       }
-      System.out.print(curr.key + " ");
+      System.out.print(curr.data + " ");
 
       if (curr.left != null) {
         q.add(curr.left);
@@ -72,7 +72,7 @@ public class a4_LevelOrderTraversal {
       int count = q.size();
       for (int i = 0; i < count; i++) {
         Node curr = q.poll();
-        System.out.print(curr.key + " ");
+        System.out.print(curr.data + " ");
         if (curr.left != null) q.add(curr.left);
         if (curr.right != null) q.add(curr.right);
       }

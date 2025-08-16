@@ -110,14 +110,14 @@ public class OPS_Tree {
   public void inorderTraversal(Node root) {
     if (root != null) {
       inorderTraversal(root.left);
-      System.out.print(root.key + " ");
+      System.out.print(root.data + " ");
       inorderTraversal(root.right);
     }
   }
 
   public void preorderTraversal(Node root) {
     if (root != null) {
-      System.out.print(root.key + " ");
+      System.out.print(root.data + " ");
       preorderTraversal(root.left);
       preorderTraversal(root.right);
     }
@@ -127,7 +127,7 @@ public class OPS_Tree {
     if (root != null) {
       postorderTraversal(root.left);
       postorderTraversal(root.right);
-      System.out.print(root.key + " ");
+      System.out.print(root.data + " ");
     }
   }
 
@@ -152,7 +152,7 @@ public class OPS_Tree {
   private void printKDist(Node root, int k) {
     if (root == null) return;
     if (k == 0) {
-      System.out.print(root.key + " ");
+      System.out.print(root.data + " ");
     } else {
       printKDist(root.left, k - 1);
       printKDist(root.right, k - 1);
@@ -166,6 +166,6 @@ public class OPS_Tree {
 
   public int getMaxInBt(Node root) {
     if (root == null) return Integer.MIN_VALUE;
-    return Math.max(root.key, Math.max(getMaxInBt(root.left), getMaxInBt(root.right)));
+    return Math.max(root.data, Math.max(getMaxInBt(root.left), getMaxInBt(root.right)));
   }
 }

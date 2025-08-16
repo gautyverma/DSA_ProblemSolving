@@ -12,7 +12,7 @@ public class a11_MaximumPathSum {
   }
 
   private static int maxPathSum(Node root) {
-    int[] res = {root.key};
+    int[] res = {root.data};
     maxPathSumUtil(root, res);
     return res[0];
   }
@@ -22,7 +22,7 @@ public class a11_MaximumPathSum {
     if (node == null) return 0;
     int l = Math.max(0, maxPathSumUtil(node.left, res));
     int r = Math.max(0, maxPathSumUtil(node.right, res));
-    res[0] = Math.max(res[0], l + r + node.key);
-    return node.key + Math.max(l, r);
+    res[0] = Math.max(res[0], l + r + node.data);
+    return node.data + Math.max(l, r);
   }
 }

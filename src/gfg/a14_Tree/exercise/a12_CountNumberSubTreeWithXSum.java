@@ -31,7 +31,7 @@ public class a12_CountNumberSubTreeWithXSum {
     if (node == null) return 0;
     int ls = countSubTreeHelper(node.left, x);
     int rs = countSubTreeHelper(node.right, x);
-    int currentSubTreeSum = ls + rs + node.key;
+    int currentSubTreeSum = ls + rs + node.data;
 
     if (currentSubTreeSum == x) count++;
     return currentSubTreeSum;

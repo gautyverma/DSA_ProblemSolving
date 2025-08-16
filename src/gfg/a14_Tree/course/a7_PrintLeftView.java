@@ -26,7 +26,7 @@ public class a7_PrintLeftView {
       for (int i = 0; i < count; i++) {
         Node curr = q.poll();
         if (i == 0) {
-          System.out.print(curr.key + " ");
+          System.out.print(curr.data + " ");
         }
         if (curr.left != null) q.add(curr.left);
         if (curr.right != null) q.add(curr.right);
@@ -43,7 +43,7 @@ public class a7_PrintLeftView {
   private static void printLeft(Node root, int level) {
     if (root == null) return;
     if (maxLevel < level) {
-      System.out.print(root.key + " ");
+      System.out.print(root.data + " ");
       maxLevel = level;
     }
     printLeft(root.left, level + 1);

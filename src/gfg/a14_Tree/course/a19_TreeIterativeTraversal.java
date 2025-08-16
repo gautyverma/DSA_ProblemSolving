@@ -29,7 +29,7 @@ public class a19_TreeIterativeTraversal {
     st.push(root);
     while (!st.isEmpty()) {
       Node curr = st.pop();
-      System.out.print(curr.key + " ");
+      System.out.print(curr.data + " ");
       if (curr.right != null) st.push(curr.right);
       if (curr.left != null) st.push(curr.left);
     }
@@ -41,7 +41,7 @@ public class a19_TreeIterativeTraversal {
     Node curr = root;
     while (!st.isEmpty()) {
       while (curr != null) {
-        System.out.print(curr.key + " ");
+        System.out.print(curr.data + " ");
         if (curr.right != null) st.push(curr.right);
         curr = curr.left;
       }

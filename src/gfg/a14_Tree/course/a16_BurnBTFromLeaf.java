@@ -45,8 +45,8 @@ public class a16_BurnBTFromLeaf {
   // Function to find the time to burn
   public static int burnTime(Node root, int leaf, Distance dist) {
     if (root == null) return 0;
-    int key = root.key;
-    if (root.key == leaf) {
+    int key = root.data;
+    if (root.data == leaf) {
       dist.val = 0;
       return 1;
     }

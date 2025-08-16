@@ -20,9 +20,9 @@ public class a8_ChildrenSumProperty {
     if (root.left == null && root.right == null) return true;
     int sum = 0;
 
-    if (root.left != null) sum += root.left.key;
-    if (root.right != null) sum += root.right.key;
-    return root.key == sum
+    if (root.left != null) sum += root.left.data;
+    if (root.right != null) sum += root.right.data;
+    return root.data == sum
         && isChildSumPropRecursive(root.left)
         && isChildSumPropRecursive(root.right);
   }
@@ -44,15 +44,15 @@ public class a8_ChildrenSumProperty {
           }
           if (curr.left != null) {
             q.add(curr.left);
-            temp += curr.left.key;
+            temp += curr.left.data;
           } else temp += 0;
 
           if (curr.right != null) {
             q.add(curr.right);
-            temp += curr.right.key;
+            temp += curr.right.data;
           } else temp += 0;
 
-          if (curr.key != temp) return false;
+          if (curr.data != temp) return false;
         }
       }
     }

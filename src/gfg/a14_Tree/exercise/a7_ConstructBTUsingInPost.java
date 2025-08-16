@@ -28,7 +28,7 @@ public class a7_ConstructBTUsingInPost {
 
     int inIndex = 0;
     for (int i = indexStart; i <= indexEnd; i++) {
-      if (inorder[i] == root.key) {
+      if (inorder[i] == root.data) {
         inIndex = i;
         break;
       }

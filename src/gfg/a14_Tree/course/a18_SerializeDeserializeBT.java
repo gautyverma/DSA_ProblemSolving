@@ -42,7 +42,7 @@ public class a18_SerializeDeserializeBT {
       arr.add(EMPTY);
       return;
     }
-    arr.add(root.key);
+    arr.add(root.data);
     serializeBT(root.left, arr);
     serializeBT(root.right, arr);
   }
