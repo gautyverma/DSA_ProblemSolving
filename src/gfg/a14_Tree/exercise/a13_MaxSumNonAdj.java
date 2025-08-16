@@ -3,7 +3,14 @@ package gfg.a14_Tree.exercise;
 import gfg.a14_Tree.common.Node;
 
 import java.util.HashMap;
-
+/*
+*
+* Given a root of binary tree with a value associated with each node.
+* Your task is to select a subset of nodes such that the sum of their values is maximized,
+* with the condition that no two selected nodes are directly connected that is,
+* if a node is included in the subset, neither its parent nor its children can be included.
+*
+* */
 public class a13_MaxSumNonAdj {
   public static void main(String[] args) {
 
