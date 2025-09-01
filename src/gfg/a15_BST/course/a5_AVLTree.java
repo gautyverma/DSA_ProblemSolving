@@ -86,6 +86,88 @@ public class a5_AVLTree {
     return node;
   }
 
+  static AVLNode deleteNode(AVLNode root, int key) {
+    // STEP 1: PERFORM STANDARD BST DELETE
+    if (root == null) return root;
+
+    // left subtree
+    if (key < root.key) root.left = deleteNode(root.left, key);
+
+    // right subtree
+    else if (key > root.key) root.right = deleteNode(root.right, key);
+
+    // if key is same as root's key, then
+    // this is the node to be deleted
+    else {
+      // node with only one child or no child
+      if ((root.left == null) || (root.right == null)) {
+        AVLNode temp = root.left != null ? root.left : root.right;
+
+        // No child case
+        if (temp == null) {
+          temp = root;
+          root = null;
+        } else { // One child case
+          root = temp;
+        }
+        // Copy the contents of
+        // the non-empty child
+      } else {
+        // node with two children: Get the
+        // inorder successor (smallest in
+        // the right subtree)
+        AVLNode temp = minValueNode(root.right);
+
+        // Copy the inorder successor's
+        // data to this node
+        root.key = temp.key;
+
+        // Delete the inorder successor
+        root.right = deleteNode(root.right, temp.key);
+      }
+    }
+
+    // If the tree had only one node then return
+    if (root == null) return root;
+
+    // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
+    root.height = Math.max(height(root.left), height(root.right)) + 1;
+
+    // STEP 3: GET THE BALANCE FACTOR OF THIS
+    // NODE (to check whether this node
+    // became unbalanced)
+    int balance = getBalance(root);
+
+    // Left-Left Case
+    if (balance > 1 && key < root.left.key) return singleRotateLeft(root);
+
+    // Right-Right Case
+    if (balance < -1 && key > root.right.key) return singleRotateRight(root);
+
+    // Left-Right Case
+    if (balance > 1 && key > root.left.key) {
+      return doubleRotateLR(root);
+    }
+
+    // Right-Left Case
+    if (balance < -1 && key < root.right.key) {
+      return doubleRotateRL(root);
+    }
+    return root;
+  }
+
+  // Given a non-empty binary search tree,
+  // return the node with minimum key value
+  // found in that tree.
+  static AVLNode minValueNode(AVLNode node) {
+    AVLNode current = node;
+
+    // loop down to find the leftmost leaf
+    while (current.left != null) current = current.left;
+
+    return current;
+  }
+
   // traversal of the tree
   static void preOrder(AVLNode root) {
     if (root != null) {
@@ -99,23 +181,24 @@ public class a5_AVLTree {
   public static void main(String[] args) {
     AVLNode root = null;
 
-    // Constructing tree given in the above figure
+    // Constructing tree given in the
+    // above figure
+    root = insert(root, 9);
+    root = insert(root, 5);
     root = insert(root, 10);
-    root = insert(root, 20);
-    root = insert(root, 30);
-    root = insert(root, 40);
-    root = insert(root, 50);
-    root = insert(root, 25);
+    root = insert(root, 0);
+    root = insert(root, 6);
+    root = insert(root, 11);
+    root = insert(root, -1);
+    root = insert(root, 1);
+    root = insert(root, 2);
 
-    /* The constructed AVL Tree would be
-              30
-            /   \
-          20     40
-         /  \      \
-       10   25     50
-    */
+    System.out.println("Preorder traversal of the " + "constructed AVL tree is:");
+    preOrder(root);
 
-    // Preorder traversal
+    root = deleteNode(root, 10);
+
+    System.out.println("\nPreorder traversal after" + " deletion of 10:");
     preOrder(root);
   }
 }
