@@ -16,14 +16,12 @@ import java.util.*;
            /       \
         70(-1)    90(+1)
 * */
-public class a12_VerticalTraversalInBT {
+public class a13_TopViewBT {
   public static void main(String[] args) {
     OPS_BST tree = new OPS_BST();
     Node root = tree.initializeBST();
-    System.out.println("\nUnordered way : ");
-    verticalTraversal(root);
 
-    System.out.println("\nOrdered way : ");
+    System.out.println("\nTop view : ");
     verticalOrder(root);
   }
 
@@ -43,39 +41,18 @@ public class a12_VerticalTraversalInBT {
       if (curr.left != null) q.add(new PairTraversal(curr.left, hd - 1));
       if (curr.right != null) q.add(new PairTraversal(curr.right, hd + 1));
     }
-    for (Map.Entry sum : map.entrySet()) {
-      System.out.println(sum.getValue() + " ");
+    for (Map.Entry val : map.entrySet()) {
+      ArrayList<Integer> list = (ArrayList<Integer>) val.getValue();
+      System.out.print(list.get(0) + " ");
     }
-  }
-
-  private static void verticalTraversal(Node root) {
-    TreeMap<Integer, List<Integer>> map = new TreeMap<>();
-    vSumTraversal(root, 0, map);
-
-    for (Map.Entry sum : map.entrySet()) {
-      System.out.println(sum.getValue() + " ");
-    }
-  }
-
-  private static void vSumTraversal(Node root, int hDist, TreeMap<Integer, List<Integer>> map) {
-
-    if (root == null) return;
-    vSumTraversal(root.left, hDist - 1, map);
-
-    // Store the current node in the map at horizontal distance hd
-    if (!map.containsKey(hDist)) map.put(hDist, new ArrayList<>());
-
-    map.get(hDist).add(root.data);
-
-    vSumTraversal(root.right, hDist + 1, map);
   }
 }
 
-class PairTraversal {
+class PairTopView {
   Node node;
   int hDist;
 
-  PairTraversal(Node n, int hd) {
+  PairTopView(Node n, int hd) {
     node = n;
     hDist = hd;
   }
