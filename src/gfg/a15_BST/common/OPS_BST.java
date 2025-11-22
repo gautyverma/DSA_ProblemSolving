@@ -25,6 +25,27 @@ public class OPS_BST {
     return root;
   }
 
+  /*
+  *           110
+            /    \
+          60     120
+         /  \       \
+       50   90     130
+            /
+          70
+  * */
+  public Node initializeBST1() {
+    Node root = new Node(110);
+    root.left = new Node(60);
+    root.left.left = new Node(50);
+    root.left.right = new Node(90);
+    root.left.right.left = new Node(70);
+
+    root.right = new Node(120);
+    root.right.right = new Node(130);
+    return root;
+  }
+
   public boolean seachinBST(Node node, int key) {
     if (node == null) return false;
     else if (node.data == key) return true;
@@ -39,17 +60,18 @@ public class OPS_BST {
       inorderTraversal(root.right);
     }
   }
-  private ArrayList<Integer> inOrderTraversalList(Node root){
+
+  private ArrayList<Integer> inOrderTraversalList(Node root) {
     ArrayList<Integer> res = new ArrayList<>();
-    inOrderTraversalListUtil(root,res);
+    inOrderTraversalListUtil(root, res);
     return res;
   }
 
   private void inOrderTraversalListUtil(Node root, ArrayList<Integer> res) {
-    if(root !=null){
-      inOrderTraversalListUtil(root.left,res);
+    if (root != null) {
+      inOrderTraversalListUtil(root.left, res);
       res.add(root.data);
-      inOrderTraversalListUtil(root.right,res);
+      inOrderTraversalListUtil(root.right, res);
     }
   }
 
