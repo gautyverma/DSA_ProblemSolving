@@ -1,5 +1,7 @@
 package gfg.a15_BST.common;
 
+import java.util.ArrayList;
+
 public class OPS_BST {
   /*
   *           100
@@ -35,6 +37,19 @@ public class OPS_BST {
       inorderTraversal(root.left);
       System.out.print(root.data + " ");
       inorderTraversal(root.right);
+    }
+  }
+  private ArrayList<Integer> inOrderTraversalList(Node root){
+    ArrayList<Integer> res = new ArrayList<>();
+    inOrderTraversalListUtil(root,res);
+    return res;
+  }
+
+  private void inOrderTraversalListUtil(Node root, ArrayList<Integer> res) {
+    if(root !=null){
+      inOrderTraversalListUtil(root.left,res);
+      res.add(root.data);
+      inOrderTraversalListUtil(root.right,res);
     }
   }
 

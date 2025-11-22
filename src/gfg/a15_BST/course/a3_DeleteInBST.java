@@ -44,7 +44,7 @@ public class a3_DeleteInBST {
 
   private static Node getSucc(Node root) {
     Node curr = root.right;
-    while (curr != null & curr.left != null) {
+    while (curr != null && curr.left != null) {
       curr = curr.left;
     }
     return curr;
