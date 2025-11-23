@@ -43,9 +43,13 @@ public class a12_VerticalTraversalInBT {
       if (curr.left != null) q.add(new PairTraversal(curr.left, hd - 1));
       if (curr.right != null) q.add(new PairTraversal(curr.right, hd + 1));
     }
-    for (Map.Entry sum : map.entrySet()) {
-      System.out.println(sum.getValue() + " ");
+    ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+    // Properly typed Map.Entry
+    for (Map.Entry<Integer, ArrayList<Integer>> entry : map.entrySet()) {
+      res.add(entry.getValue());
     }
+
+    System.out.println(res);
   }
 
   private static void verticalTraversal(Node root) {
