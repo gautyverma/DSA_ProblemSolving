@@ -15,7 +15,7 @@ import java.util.List;
           / \
         70   80
 * */
-public class a15_LCA {
+public class a15_LowestCommonAncestor {
   public static void main(String[] args) {
     OPS_Tree tree = new OPS_Tree();
     Node root = tree.initializeTree();
