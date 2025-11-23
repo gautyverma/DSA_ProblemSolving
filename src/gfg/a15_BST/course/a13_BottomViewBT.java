@@ -21,16 +21,16 @@ public class a13_BottomViewBT {
     OPS_BST tree = new OPS_BST();
     Node root = tree.initializeBST();
 
-    System.out.println("\nTop view : ");
+    System.out.println("\nBottom view : ");
     verticalOrder(root);
   }
 
   private static void verticalOrder(Node root) {
-    Queue<PairTraversal> q = new LinkedList<>();
+    Queue<PairBottomView> q = new LinkedList<>();
     Map<Integer, ArrayList<Integer>> map = new TreeMap<>();
-    q.add(new PairTraversal(root, 0));
+    q.add(new PairBottomView(root, 0));
     while (!q.isEmpty()) {
-      PairTraversal p = q.poll();
+      PairBottomView p = q.poll();
       int hd = p.hDist;
       Node curr = p.node;
 
@@ -38,13 +38,15 @@ public class a13_BottomViewBT {
       if (!map.containsKey(hd)) map.put(hd, new ArrayList<>());
       map.get(hd).add(curr.data);
 
-      if (curr.left != null) q.add(new PairTraversal(curr.left, hd - 1));
-      if (curr.right != null) q.add(new PairTraversal(curr.right, hd + 1));
+      if (curr.left != null) q.add(new PairBottomView(curr.left, hd - 1));
+      if (curr.right != null) q.add(new PairBottomView(curr.right, hd + 1));
     }
-    for (Map.Entry val : map.entrySet()) {
-      ArrayList<Integer> list = (ArrayList<Integer>) val.getValue();
-      System.out.print(list.getLast() + " ");
+
+    ArrayList<Integer> res = new ArrayList<>();
+    for (Map.Entry<Integer, ArrayList<Integer>> entry : map.entrySet()) {
+      res.add(entry.getValue().getLast());
     }
+    System.out.println(res);
   }
 }
 
