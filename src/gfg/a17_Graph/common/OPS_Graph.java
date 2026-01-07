@@ -99,7 +99,6 @@ public class OPS_Graph {
     return adj;
   }
 
-
   public void printGraph(ArrayList<ArrayList<Integer>> adj) {
     for (int i = 0; i < adj.size(); i++) {
       System.out.print(i + " -> ");
@@ -113,5 +112,40 @@ public class OPS_Graph {
   private void addEdgeUndirected(ArrayList<ArrayList<Integer>> adj, int u, int v) {
     adj.get(u).add(v);
     adj.get(v).add(u);
+  }
+
+  /*
+  *
+  *
+  * 0 ───▶ 1 ◀─── 2 ───▶  3 ───▶ 4 ───▶ 5
+                          ▲               │
+                          └───────────────┘
+  0 → 1
+  1 →
+  2 → 1, 3
+  3 → 4
+  4 → 5
+  5 → 3
+  * */
+  public ArrayList<ArrayList<Integer>> getDirectedGraphCyclic() {
+    int vertices = 6;
+    ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>(vertices);
+    for (int i = 0; i < vertices; i++) {
+      adj.add(new ArrayList<Integer>());
+    }
+    addEdgeDirected(adj, 0, 1);
+
+    addEdgeDirected(adj, 2, 1);
+    addEdgeDirected(adj, 2, 3);
+
+    addEdgeDirected(adj, 3, 4);
+    addEdgeDirected(adj, 4, 5);
+    addEdgeDirected(adj, 5, 3);
+
+    return adj;
+  }
+
+  private void addEdgeDirected(ArrayList<ArrayList<Integer>> adj, int u, int v) {
+    adj.get(u).add(v);
   }
 }
