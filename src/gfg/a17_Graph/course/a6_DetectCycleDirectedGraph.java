@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class a6_DetectCycleDirectedGraph {
   public static void main(String[] args) {
     OPS_Graph util = new OPS_Graph();
-    ArrayList<ArrayList<Integer>> adj = util.getDirectedGraphCyclic();
+    ArrayList<ArrayList<Integer>> adj = util.getDirectedCyclicGraph();
     util.printGraph(adj);
     System.out.println("-------------------");
     System.out.println("Is Cycle present :" + isCyclicDirectGraph(adj));
