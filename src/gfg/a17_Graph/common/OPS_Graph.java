@@ -186,4 +186,54 @@ public class OPS_Graph {
   private void addEdgeDirected(ArrayList<ArrayList<Integer>> adj, int u, int v) {
     adj.get(u).add(v);
   }
+
+  /*
+
+  0 → (1,2), (4,1)
+  1 → (2,3)
+  2 → (3,6)
+  3 →
+  4 → (2,2), (5,4)
+  5 → (3,1)
+
+  * */
+  public ArrayList<ArrayList<Edge>> getWeightedDirectedAcyclicGraph() {
+
+    int vertices = 6;
+    ArrayList<ArrayList<Edge>> adj = new ArrayList<>(vertices);
+
+    for (int i = 0; i < vertices; i++) {
+      adj.add(new ArrayList<>());
+    }
+
+    addEdgeDirected(adj, 0, 1, 2);
+    addEdgeDirected(adj, 0, 4, 1);
+
+    addEdgeDirected(adj, 1, 2, 3);
+
+    addEdgeDirected(adj, 2, 3, 6);
+
+    addEdgeDirected(adj, 4, 2, 2);
+    addEdgeDirected(adj, 4, 5, 4);
+
+    addEdgeDirected(adj, 5, 3, 1);
+    return adj;
+  }
+
+  private void addEdgeDirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
+    adj.get(u).add(new Edge(v, weight));
+  }
+
+  public void printWeightedGraph(ArrayList<ArrayList<Edge>> adj) {
+
+    for (int i = 0; i < adj.size(); i++) {
+      System.out.print(i + " -> ");
+
+      for (Edge e : adj.get(i)) {
+        System.out.print("(" + e.v + ", " + e.weight + ") ");
+      }
+
+      System.out.println();
+    }
+  }
 }
