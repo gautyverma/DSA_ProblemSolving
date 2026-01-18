@@ -1,6 +1,13 @@
 package gfg.a17_Graph.course;
 
-import java.util.Arrays;
+/*
+* Edges shown:
+0 — 1 (5)
+0 — 2 (8)
+1 — 2 (10)
+1 — 3 (15)
+2 — 3 (20)
+* */
 
 public class a11_PrimsAlgo {
   public static void main(String[] args) {
@@ -62,21 +69,21 @@ public class a11_PrimsAlgo {
     printMST(parent, graph);
   }
 
-    // A utility function to find the vertex with minimum
-    // key value, from the set of vertices not yet included
-    // in MST
-    static int minKey(int key[], Boolean mstSet[]) {
-      // Initialize min value
-      int min = Integer.MAX_VALUE, min_index = -1;
+  // A utility function to find the vertex with minimum
+  // key value, from the set of vertices not yet included
+  // in MST
+  static int minKey(int key[], Boolean mstSet[]) {
+    // Initialize min value
+    int min = Integer.MAX_VALUE, min_index = -1;
 
-      for (int v = 0; v < mstSet.length; v++)
-        if (mstSet[v] == false && key[v] < min) {
-          min = key[v];
-          min_index = v;
-        }
+    for (int v = 0; v < mstSet.length; v++)
+      if (mstSet[v] == false && key[v] < min) {
+        min = key[v];
+        min_index = v;
+      }
 
-      return min_index;
-    }
+    return min_index;
+  }
 
   // A utility function to print the constructed MST
   // stored in parent[]
