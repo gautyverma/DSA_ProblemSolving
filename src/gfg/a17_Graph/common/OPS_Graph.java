@@ -220,8 +220,61 @@ public class OPS_Graph {
     return adj;
   }
 
+  /*
+    *
+  0 -> (1, 4) (2, 8)
+  1 -> (0, 4) (2, 11) (3, 8)
+  2 -> (0, 8) (1, 11) (4, 7) (5, 1)
+  3 -> (1, 8) (4, 2) (6, 7) (7, 4)
+  4 -> (2, 7) (3, 2) (5, 6)
+  5 -> (2, 1) (4, 6) (7, 2)
+  6 -> (3, 7) (7, 9) (8, 14)
+  7 -> (3, 4) (5, 2) (6, 9) (8, 10)
+  8 -> (6, 14) (7, 10)
+
+    * */
+  public ArrayList<ArrayList<Edge>> getWeightedUnDirectedGraph() {
+
+    int vertices = 9;
+    ArrayList<ArrayList<Edge>> adj = new ArrayList<>(vertices);
+
+    for (int i = 0; i < vertices; i++) {
+      adj.add(new ArrayList<>());
+    }
+
+    addEdgeUndirected(adj, 0, 1, 4);
+    addEdgeUndirected(adj, 0, 2, 8);
+
+    addEdgeUndirected(adj, 1, 2, 11);
+    addEdgeUndirected(adj, 1, 3, 8);
+
+    addEdgeUndirected(adj, 2, 4, 7);
+    addEdgeUndirected(adj, 2, 5, 1);
+
+    addEdgeUndirected(adj, 3, 4, 2);
+    addEdgeUndirected(adj, 3, 6, 7);
+    addEdgeUndirected(adj, 3, 7, 4);
+
+    addEdgeUndirected(adj, 4, 5, 6);
+
+    addEdgeUndirected(adj, 5, 7, 2);
+
+    addEdgeUndirected(adj, 6, 7, 9);
+    addEdgeUndirected(adj, 6, 8, 14);
+
+    addEdgeUndirected(adj, 7, 8, 10);
+
+    return adj;
+  }
+
   private void addEdgeDirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
     adj.get(u).add(new Edge(v, weight));
+  }
+
+  // Add undirected edge
+  private void addEdgeUndirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
+    adj.get(u).add(new Edge(v, weight));
+    adj.get(v).add(new Edge(u, weight));
   }
 
   public void printWeightedGraph(ArrayList<ArrayList<Edge>> adj) {
