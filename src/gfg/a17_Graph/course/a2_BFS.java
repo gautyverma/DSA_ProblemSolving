@@ -55,8 +55,25 @@ public class a2_BFS {
     }
   }
 
-  /* Version 1 - Given an undirected graph and a source vertex's, print BFS from given source.
-   * */
+/* Version 1 - Given an undirected graph and a source vertex's, print BFS from given source.
+
+Input the adjacency list of the graph and the source vertex.
+Create a boolean array visited[] of size equal to the number of vertices and initialize all values to false.
+Create an empty queue.
+Create an empty list to store the BFS traversal.
+Mark the source vertex as visited.
+Insert the source vertex into the queue.
+While the queue is not empty:
+  a. Remove the front vertex from the queue and store it in variable u.
+  b. Add u to the traversal list.
+  c. For each vertex v adjacent to u:
+    i. If v is not visited:
+    - Mark v as visited.
+    - Insert v into the queue.
+Repeat until the queue becomes empty.
+Output the traversal list.
+
+*/
   private static ArrayList<Integer> bfs1(ArrayList<ArrayList<Integer>> adj, int source) {
     int vertices = adj.size();
     boolean[] visited = new boolean[vertices];

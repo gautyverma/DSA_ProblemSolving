@@ -38,6 +38,22 @@ public class a3_DFS {
     return res;
   }
 
+  /*
+Input the adjacency list of the graph and the source vertex.
+Create a boolean array visited[] of size equal to the number of vertices and initialize all values to false.
+Create an empty list to store the DFS traversal.
+Call the recursive DFS function with source vertex.
+In the DFS recursive function:
+  a. Mark the current vertex as visited.
+  b. Add the current vertex to the traversal list.
+  c. For each adjacent vertex of the current vertex:
+    i. If the adjacent vertex is not visited:
+      - Recursively call DFS for that vertex.
+
+Continue until all reachable vertices from the source are visited.
+
+Output the traversal list.
+  * */
   private static void dfsRec(
       ArrayList<ArrayList<Integer>> adj, int src, boolean[] visited, ArrayList<Integer> res) {
     visited[src] = true;

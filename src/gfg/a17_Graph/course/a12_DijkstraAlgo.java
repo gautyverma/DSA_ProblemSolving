@@ -54,7 +54,8 @@ public class a12_DijkstraAlgo {
     }
     return new ArrayList<>(Arrays.asList(dist));
   }
- // ==== Efficient solution ====
+
+  // ==== Efficient solution ====
   // Pair class for PriorityQueue
   static class Pair {
     int v;
@@ -118,7 +119,7 @@ public class a12_DijkstraAlgo {
 
   // Print path using parent[]
   private static void printPath(int[] parent, int v, int source) {
-
+    System.out.print("\t");
     if (v == source) {
       System.out.print(source);
       return;
@@ -133,7 +134,7 @@ public class a12_DijkstraAlgo {
     }
 
     while (!stack.isEmpty()) {
-      System.out.print(stack.pop());
+      System.out.print(+stack.pop());
       if (!stack.isEmpty()) System.out.print(" -> ");
     }
   }
