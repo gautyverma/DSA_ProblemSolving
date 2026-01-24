@@ -206,17 +206,17 @@ public class OPS_Graph {
       adj.add(new ArrayList<>());
     }
 
-    addEdgeDirected(adj, 0, 1, 2);
-    addEdgeDirected(adj, 0, 4, 1);
+    addWtEdgeDirected(adj, 0, 1, 2);
+    addWtEdgeDirected(adj, 0, 4, 1);
 
-    addEdgeDirected(adj, 1, 2, 3);
+    addWtEdgeDirected(adj, 1, 2, 3);
 
-    addEdgeDirected(adj, 2, 3, 6);
+    addWtEdgeDirected(adj, 2, 3, 6);
 
-    addEdgeDirected(adj, 4, 2, 2);
-    addEdgeDirected(adj, 4, 5, 4);
+    addWtEdgeDirected(adj, 4, 2, 2);
+    addWtEdgeDirected(adj, 4, 5, 4);
 
-    addEdgeDirected(adj, 5, 3, 1);
+    addWtEdgeDirected(adj, 5, 3, 1);
     return adj;
   }
 
@@ -242,37 +242,37 @@ public class OPS_Graph {
       adj.add(new ArrayList<>());
     }
 
-    addEdgeUndirected(adj, 0, 1, 4);
-    addEdgeUndirected(adj, 0, 2, 8);
+    addWtEdgeUndirected(adj, 0, 1, 4);
+    addWtEdgeUndirected(adj, 0, 2, 8);
 
-    addEdgeUndirected(adj, 1, 2, 11);
-    addEdgeUndirected(adj, 1, 3, 8);
+    addWtEdgeUndirected(adj, 1, 2, 11);
+    addWtEdgeUndirected(adj, 1, 3, 8);
 
-    addEdgeUndirected(adj, 2, 4, 7);
-    addEdgeUndirected(adj, 2, 5, 1);
+    addWtEdgeUndirected(adj, 2, 4, 7);
+    addWtEdgeUndirected(adj, 2, 5, 1);
 
-    addEdgeUndirected(adj, 3, 4, 2);
-    addEdgeUndirected(adj, 3, 6, 7);
-    addEdgeUndirected(adj, 3, 7, 4);
+    addWtEdgeUndirected(adj, 3, 4, 2);
+    addWtEdgeUndirected(adj, 3, 6, 7);
+    addWtEdgeUndirected(adj, 3, 7, 4);
 
-    addEdgeUndirected(adj, 4, 5, 6);
+    addWtEdgeUndirected(adj, 4, 5, 6);
 
-    addEdgeUndirected(adj, 5, 7, 2);
+    addWtEdgeUndirected(adj, 5, 7, 2);
 
-    addEdgeUndirected(adj, 6, 7, 9);
-    addEdgeUndirected(adj, 6, 8, 14);
+    addWtEdgeUndirected(adj, 6, 7, 9);
+    addWtEdgeUndirected(adj, 6, 8, 14);
 
-    addEdgeUndirected(adj, 7, 8, 10);
+    addWtEdgeUndirected(adj, 7, 8, 10);
 
     return adj;
   }
 
-  private void addEdgeDirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
+  private void addWtEdgeDirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
     adj.get(u).add(new Edge(v, weight));
   }
 
   // Add undirected edge
-  private void addEdgeUndirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
+  private void addWtEdgeUndirected(ArrayList<ArrayList<Edge>> adj, int u, int v, int weight) {
     adj.get(u).add(new Edge(v, weight));
     adj.get(v).add(new Edge(u, weight));
   }
@@ -288,5 +288,21 @@ public class OPS_Graph {
 
       System.out.println();
     }
+  }
+
+  /*Strongly Connected Components (SCCs) in a directed graph.*/
+  public ArrayList<ArrayList<Integer>> getDirectedSSCGraph() {
+    ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    int V = 4;
+    for (int i = 0; i < V; i++) {
+      adj.add(new ArrayList<>());
+    }
+    addEdgeDirected(adj, 0, 1);
+
+    addEdgeDirected(adj, 1, 3);
+    addEdgeDirected(adj, 1, 2);
+
+    addEdgeDirected(adj, 3, 0);
+    return adj;
   }
 }
