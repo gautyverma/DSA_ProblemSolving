@@ -305,4 +305,20 @@ public class OPS_Graph {
     addEdgeDirected(adj, 3, 0);
     return adj;
   }
+
+  public ArrayList<ArrayList<Integer>> getUndirectedArticulatedGraph() {
+    int V = 7;
+    ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+    for (int i = 0; i < V; i++) adj.add(new ArrayList<>());
+
+    addEdgeUndirected(adj, 0, 1);
+    addEdgeUndirected(adj, 0, 3);
+    addEdgeUndirected(adj, 1, 2);
+    addEdgeUndirected(adj, 1, 4);
+    addEdgeUndirected(adj, 2, 3);
+    addEdgeUndirected(adj, 4, 5);
+    addEdgeUndirected(adj, 4, 6);
+    return adj;
+  }
 }
