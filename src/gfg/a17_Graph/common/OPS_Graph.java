@@ -306,6 +306,24 @@ public class OPS_Graph {
     return adj;
   }
 
+  /*Strongly Connected Components (SCCs) in a directed graph.*/
+  public ArrayList<ArrayList<Integer>> getDirectedSSCGraph1() {
+    ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    int V = 5;
+    for (int i = 0; i < V; i++) {
+      adj.add(new ArrayList<>());
+    }
+    addEdgeDirected(adj, 0, 1);
+    addEdgeDirected(adj, 1, 3);
+
+    addEdgeDirected(adj, 1, 2);
+
+    addEdgeDirected(adj, 2, 0);
+
+    addEdgeDirected(adj, 3, 4);
+    addEdgeDirected(adj, 4, 3);
+    return adj;
+  }
   public ArrayList<ArrayList<Integer>> getUndirectedArticulatedGraph() {
     int V = 7;
     ArrayList<ArrayList<Integer>> adj = new ArrayList<>();

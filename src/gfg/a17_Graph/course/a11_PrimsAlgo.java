@@ -9,10 +9,21 @@ package gfg.a17_Graph.course;
 2 — 3 (20)
 * */
 
+import gfg.a17_Graph.common.Edge;
+import gfg.a17_Graph.common.OPS_Graph;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 public class a11_PrimsAlgo {
   public static void main(String[] args) {
     int[][] graph = new int[][] {{0, 5, 8, 0}, {5, 0, 10, 15}, {8, 10, 0, 20}, {0, 15, 20, 0}};
     primsAlgo(graph);
+    System.out.println("===============");
+    OPS_Graph util = new OPS_Graph();
+    ArrayList<ArrayList<Edge>> adj = util.getWeightedUnDirectedGraph();
+    primsAlgo(adj);
   }
 
   private static void primsAlgo(int[][] graph) {
@@ -91,5 +102,58 @@ public class a11_PrimsAlgo {
     System.out.println("Edge \tWeight");
     for (int i = 1; i < graph.length; i++)
       System.out.println(parent[i] + " - " + i + "\t" + graph[parent[i]][i]);
+  }
+
+  // ********************
+
+  private static void primsAlgo(ArrayList<ArrayList<Edge>> adj) {
+
+    int V = adj.size();
+
+    int[] key = new int[V];
+    int[] parent = new int[V];
+    boolean[] inMST = new boolean[V];
+
+    Arrays.fill(key, Integer.MAX_VALUE);
+    Arrays.fill(parent, -1);
+
+    // Min heap {key, vertex}
+    PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+
+    // Start from vertex 0
+    key[0] = 0;
+    pq.add(new int[] {0, 0});
+
+    while (!pq.isEmpty()) {
+
+      int[] curr = pq.poll();
+      int u = curr[1];
+
+      if (inMST[u]) continue;
+
+      inMST[u] = true;
+
+      // Explore neighbors
+      for (Edge edge : adj.get(u)) {
+
+        int v = edge.v;
+        int weight = edge.weight;
+
+        if (!inMST[v] && weight < key[v]) {
+          key[v] = weight;
+          parent[v] = u;
+          pq.add(new int[] {key[v], v});
+        }
+      }
+    }
+
+    printMST(parent, key);
+  }
+
+  private static void printMST(int[] parent, int[] key) {
+    System.out.println("Edge\tWeight");
+    for (int i = 1; i < parent.length; i++) {
+      System.out.println(parent[i] + " - " + i + "\t" + key[i]);
+    }
   }
 }
