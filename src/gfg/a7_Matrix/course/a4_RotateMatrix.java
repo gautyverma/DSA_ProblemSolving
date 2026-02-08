@@ -85,4 +85,30 @@ public class a4_RotateMatrix {
       System.out.println();
     }
   }
+
+  static void rotateAntiClockwise90(int[][] mat) {
+    int n = mat.length;
+
+    // 1. Transpose
+    for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+        int temp = mat[i][j];
+        mat[i][j] = mat[j][i];
+        mat[j][i] = temp;
+      }
+    }
+
+    // 2. Reverse each column
+    for (int j = 0; j < n; j++) {
+      int top = 0, bottom = n - 1;
+      while (top < bottom) {
+        int temp = mat[top][j];
+        mat[top][j] = mat[bottom][j];
+        mat[bottom][j] = temp;
+        top++;
+        bottom--;
+      }
+    }
+  }
+
 }
