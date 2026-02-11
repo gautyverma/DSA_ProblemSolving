@@ -35,6 +35,7 @@ public class a6_FindNumberOfIslands {
     return count;
   }
 
+
   private static void bfs(int[][] grid, boolean[][] visited, int x, int y, int[] dx, int[] dy) {
     Queue<int[]> q = new LinkedList<>();
     visited[x][y] = true;
