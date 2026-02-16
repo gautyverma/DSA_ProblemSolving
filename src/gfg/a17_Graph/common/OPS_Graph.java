@@ -324,6 +324,7 @@ public class OPS_Graph {
     addEdgeDirected(adj, 4, 3);
     return adj;
   }
+
   public ArrayList<ArrayList<Integer>> getUndirectedArticulatedGraph() {
     int V = 7;
     ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -337,6 +338,22 @@ public class OPS_Graph {
     addEdgeUndirected(adj, 2, 3);
     addEdgeUndirected(adj, 4, 5);
     addEdgeUndirected(adj, 4, 6);
+    return adj;
+  }
+
+  public ArrayList<ArrayList<Integer>> edgesToGraph(int V, int[][] edges) {
+    ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    for (int i = 0; i < V; i++) {
+      adj.add(new ArrayList<>());
+    }
+
+    for (int[] edge : edges) {
+      int u = edge[0];
+      int v = edge[1];
+
+      adj.get(u).add(v);
+      adj.get(v).add(u);   // remove this line for directed graph
+    }
     return adj;
   }
 }
