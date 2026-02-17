@@ -92,8 +92,9 @@ public class a13_Kosaraju_StronglyConnected {
       int u, ArrayList<ArrayList<Integer>> adj, boolean[] visited, Stack<Integer> st) {
     visited[u] = true;
     for (int i = 0; i < adj.get(u).size(); i++) {
-      if (!visited[i]) {
-        DFS1(i, adj, visited, st);
+      int v = adj.get(u).get(i);
+      if (!visited[v]) {
+        DFS1(v, adj, visited, st);
       }
     }
     st.push(u);
