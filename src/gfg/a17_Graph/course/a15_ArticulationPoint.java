@@ -32,6 +32,9 @@ public class a15_ArticulationPoint {
         //        System.out.println(i);
         res.add(i);
     }
+    if(res.size() == 0){
+      res.add(-1);
+    }
     return res;
   }
 
