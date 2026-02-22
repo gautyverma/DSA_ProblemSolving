@@ -1,5 +1,7 @@
 package gfg.a18_Greedy.course;
 
+import gfg.a18_Greedy.exercise.a1_NMeetsInOneRoom;
+
 import java.util.Arrays;
 
 public class a1_ActivitySelection {
@@ -33,5 +35,36 @@ public class a1_ActivitySelection {
       }
     }
     return count;
+  }
+
+  private static int maxActivity(int[] start,int[] finish) {
+    int n = start.length;
+    if (n == 0) return 0;
+    Time arr[] = new Time[n];
+    // step - 1 pair setup
+    for (int i = 0; i < n; i++) {
+      arr[i] = new Time(start[i], finish[i]);
+    }
+
+
+    Arrays.sort(arr, (a, b) -> a.end - b.end);
+    int count = 1;
+    int lastFinish = arr[0].end;
+    for (int i = 1; i < n; i++) {
+      if (arr[i].start > lastFinish) {
+        count++;
+        lastFinish = arr[i].end;
+      }
+    }
+    return count;
+  }
+
+  static class Time {
+    int start, end;
+
+    public Time(int start, int end) {
+      this.start = start;
+      this.end = end;
+    }
   }
 }
