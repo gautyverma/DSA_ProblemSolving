@@ -24,6 +24,22 @@ public class a1_TargetSum {
     System.out.println("result :: " + targetSumComb(arr, target));
   }
 
+  /*
+  * 1. If target == 0:
+         Add current combination
+         return
+
+  2. If index == arr.length:
+         return
+
+  3. If arr[index] <= target:
+         Include arr[index]
+         backtrack(index, target - arr[index])
+         Remove last element (backtrack)
+
+  4. Exclude current element
+         backtrack(index + 1, target)
+  * */
   private static ArrayList<ArrayList<Integer>> targetSumComb(int[] arr, int target) {
 
     Arrays.sort(arr);
