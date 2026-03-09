@@ -22,7 +22,7 @@ public class a12_OptimalStrategyGame {
 
   private static int maxValDp(int[] arr, int n) {
     int[][] dp = new int[n][n];
-    for (int i = 0; i < n-1; i++) {
+    for (int i = 0; i < n - 1; i++) {
       dp[i][i + 1] = Math.max(arr[i], arr[i + 1]);
     }
 
